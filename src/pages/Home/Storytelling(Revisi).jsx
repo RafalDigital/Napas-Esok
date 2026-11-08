@@ -1,0 +1,443 @@
+/* eslint-disable no-unused-vars */
+// REACT
+import { useRef } from "react";
+
+// GSAP
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+
+gsap.registerPlugin(ScrollTrigger, useGSAP)
+
+// ASSET
+import KalimantanMap from "../../assets/vectors/KalimantanMap";
+import { Info } from "lucide-react";
+import { Stethoscope } from "lucide-react";
+import { School } from "lucide-react";
+import { Plane } from "lucide-react";
+import { PawPrint } from "lucide-react";
+import { MoveRight } from "lucide-react";
+
+export default function StoryTellingRev() {
+  const mainContainer = useRef(null);
+
+  // Section 1
+  const firstText = splitTextByWord('Setiap napas adalah hak, bukan risiko');
+
+  // Saction 2
+  const section2Text1 = splitTextByWord('Berawal dari satu titik');
+  const section2Text2 = splitTextByWord('lahan gambut');
+
+  // Section 3
+  const section3Text1 = splitTextByWord('Bagaimana kalau kita bisa melihatnya sebelum terlambat?');
+  
+  
+  useGSAP(() => {
+    const introTl = gsap.timeline({
+      defaults: { ease: "none" }
+    });
+
+    introTl
+    .to({}, { duration: 0.2 })
+    .fromTo(
+      ".kalimantan-map",
+      { animationDelayS: 1, scale: 0.8, clipPath: "ellipse(0% 0% at 50% 50%)", opacity: 0 },
+      { clipPath: "ellipse(75% 75% at 50% 50%)", opacity: 1, duration: 1.5 }
+    )
+    .from(".first-text", {
+      scale: 0.8,
+      duration: 1.2,
+      ease: "back.out(1.4)"
+    })
+    .fromTo(
+      ".word",
+      { opacity: 0, y: 15 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.4,
+        stagger: 0.08,
+        ease: "power2.out"
+      },
+      "<0.2"
+    )
+    .to('.text-section2', {
+      scrollTrigger: {
+          trigger: 'text-section2',
+          // markers: true,
+          pin: true
+        } 
+    })
+    
+
+    gsap.to('.first-text', {
+      opacity: 0,
+      y: -300,
+      ease: 'power1.out',
+      scrollTrigger: {
+        trigger: '.first-text',
+        start: '-=200 top',
+        end: '+=400',
+        // markers: true,
+        scrub: true,
+      }
+    });
+
+    // Ngakalin dikit
+    gsap.fromTo('.section2-1', 
+      {y: 40, x: 40},
+      {}
+    )
+    gsap.fromTo('.section2-2', 
+      {y: -140, x: -40},
+      {}
+    )
+    gsap.fromTo('.section6-1', 
+      {y: -280},
+      {}
+    )
+    gsap.fromTo('.text-section5',
+      {x: 100},
+      {}
+    )
+    gsap.fromTo('.text-section6',
+      {y: 180},
+      {}
+    )
+    gsap.fromTo('.section6-1',
+      {y: 0},
+      {}
+    )
+    gsap.fromTo('.qta-section',
+      {},
+      {}
+    )
+
+  //   gsap.fromTo(".first-text", 
+  //   {     opacity: 1,}, 
+  //   {
+  //     // yPercent: -150,
+  
+  //     scale: 0, y : 20,
+  //     scrollTrigger: {
+  //       trigger: '.first-text',
+  //       start: '-px 40%',
+  //       end: '+=80', // Sesuaikan jarak scroll-nya
+  //       markers: true,
+  //     }
+  //   }
+  // );
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: '.story-telling-hero',
+        start: "top 40px",
+        end: "+=3300",
+        pin: true, 
+        scrub: 1,   
+      },
+    });
+
+    tl.to('.kalimantan-map', {scale: 1.02})
+      .fromTo(
+        ".section2word",
+        { opacity: 0, y: 15,},
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.4,
+          stagger: 0.08,
+          ease: "power2.out",
+        },
+        '+=1'
+      )
+      .fromTo(
+        ".red-dot",
+        {opacity: 0, r: 0},
+        {opacity: 1, r:4},
+        "<"
+      )
+      .fromTo(
+        ".section2word",
+        { opacity: 1, y: 0,},
+        {
+          opacity: 0,
+          y: -15,
+          duration: 0.4,
+          stagger: 0.08,
+          ease: "power2.out",
+        },
+      )
+      .to(
+        ".red-dot",
+        {r: 360},
+      )
+      .to('.kalimantan-map', {scale: 0.8, x: -300})
+      // Section 3
+      .fromTo(
+        ".section3-item",
+        { opacity: 0, y: 15,},
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.4,
+          stagger: 0.08,
+          ease: "power2.out",
+        },
+      )
+      .fromTo(
+        ".section3-item",
+        { opacity: 1, y: 0,},
+        {
+          opacity: 0,
+          y: -15,
+          duration: 0.4,
+          stagger: 0.08,
+          ease: "power2.out",
+        },
+        '+=1'
+      )
+      // Section 4
+      .fromTo(
+        ".section4-item",
+        { opacity: 0, y: 15,},
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.4,
+          stagger: 0.08,
+          ease: "power2.out",
+        },
+      )
+      .fromTo(
+        ".section4-item",
+        { opacity: 1, y: 0,},
+        {
+          opacity: 0,
+          y: -15,
+          duration: 0.4,
+          stagger: 0.08,
+          ease: "power2.out",
+        },
+        '+=1'
+      )
+      // Section 5
+      .fromTo(
+        ".section5-item",
+        { opacity: 0, y: 15,},
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.4,
+          stagger: 0.08,
+          ease: "power2.out",
+        },
+      )
+      .fromTo(
+        ".section5-item",
+        { opacity: 1, y: 0,},
+        {
+          opacity: 0,
+          y: -15,
+          duration: 0.4,
+          stagger: 0.08,
+          ease: "power2.out",
+        },
+        '+=1'
+      )
+      .fromTo(
+        ".kalimantan-map",
+        { },
+        {
+          scale: 0.4, x: 0
+        },
+      )
+      .to('.kalimantan-map', {y: -200})
+      .fromTo(
+        ".section6word",
+        { opacity: 0, y: 15,},
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.4,
+          stagger: 0.08,
+          ease: "power2.out",
+        },
+      // "<0"
+      )
+      .fromTo(
+        ".qta-item",
+        { opacity: 0, y: 15,},
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.4,
+          stagger: 0.08,
+          ease: "power2.out",
+        },
+      // "<0"
+      )
+
+
+  }, { scope : mainContainer })
+  
+  return(
+    <>
+      <div ref={mainContainer} id="StoryTelling" className="w-full max-w-7xl mx-auto text-zinc-50 py-10 px-4">
+
+      <div className="story-telling-hero">
+        {/* Section 1 */}
+        <div className="flex min-h-screen justify-center items-center">
+          <div className="kalimantan-map absolute">
+              <KalimantanMap/>
+          </div>
+          <div className="absolute font-plusJktSans max-w-4xl flex min-h-screen justify-center items-center text-center text-[60px] [word-spacing:2rem] font-bold">
+            <h1 className="first-text flex  flex-wrap justify-center items-center">
+              {firstText.map((word) => (
+                <span className="word mx-6">{word}</span>
+              ))}
+            </h1>
+          </div>
+
+          <div className="text-section2 top-0 absolute flex flex-col justify-between mx-auto h-dvh w-full max-w-3xl pt-28 text-xl font-bold font-plusJktSans">
+          <h1 className="section2-1 flex justify-start items-start">
+            {section2Text1.map((word) => (
+                <span className="section2word mx-1">{word}</span>
+              ))}
+          </h1>
+          <h1 className="section2-2 flex justify-end items-end">
+            {section2Text2.map((word) => (
+                <span className="section2word mx-1">{word}</span>
+              ))}
+          </h1>
+        </div>
+
+        <div className="text-section6 top-0 absolute flex flex-col gap-10 justify-center items-center mx-auto h-dvh w-full max-w-3xl pt-28">
+          <div className="text-4xl font-bold font-plusJktSans">
+              <h1 className="section6-1 flex flex-wrap justify-center">
+                {section3Text1.map((word) => (
+                    <span className="section6word mx-4">{word}</span>
+                  ))}
+              </h1>
+          </div>
+              <div className="qta-section flex gap-6 justify-center mx-auto h-dvh w-full max-w-7xl font-plusJktSans">
+                <button className="qta-button-1 qta-item flex gap-2 rounded-md h-fit cursor-pointer">Liat titik api hari ini <MoveRight/></button>
+                <button className="qta-button-2 qta-item flex gap-2 rounded-md h-fit cursor-pointer">Pelajari masalahnya</button>
+              </div>
+        </div>
+
+        {/* QTA Button */}
+        
+        
+        <div className="text-section3 absolute flex flex-col h-dvh w-full max-w-3xl right-0 items-center justify-center gap-2 font-plusJktSans">
+          <div className="flex flex-col gap-2 items-end">
+            <div className="section3-item text-7xl font-bold text-red-500">
+              <h1 className="">1,6</h1>
+            </div>
+            <div className="section3-item text-5xl font-medium">
+              <h1>juta hektar</h1>
+            </div>
+            <div className="section3-item text-lg font-light text-zinc-400">
+              <h1>lahan terbakar pada tahun 2019</h1>
+            </div>
+            <div className="section3-item text-xl font-light text-red-400">
+              <h1>Dalam hitungan minggu</h1>
+            </div>
+            <div className="section3-item flex flex-wrap gap-2 text-zinc-700">
+              <h1>Sumber: KLHK (SiPongi). Verifikasi angka sebelum dipakai</h1>
+              <Info/>
+            </div>
+          </div>
+        </div>
+
+        <div className="text-section4 absolute flex flex-col h-dvh w-full max-w-3xl right-0 items-center justify-center gap-2 font-plusJktSans">
+          <div className="flex flex-col items-end">
+            <div className="section4-item text-6xl font-semibold mb-2">
+              <h1>Api padam.</h1>
+            </div>
+            <div className="section4-item text-6xl font-semibold text-red-300">
+              <h1>Asapnya tidak.</h1>
+            </div>
+            <div className="section4-item text-lg text-zinc-400 font-light mt-10">
+              <h1>Terbawa angin ke kota kota,</h1>
+            </div>
+            <div className="section4-item text-lg text-zinc-400 font-light">
+              <h1>Bahkan melintasi batas negara.</h1>
+            </div>
+          </div>
+        </div>
+
+        <div className="text-section5 absolute flex flex-col h-dvh w-full max-w-3xl right-0 items-center justify-center gap-2 font-plusJktSans">
+          <div className="flex flex-col items-end gap-4">
+            {/* Item 1 */}
+            <div className="section5-item p-4 rounded-lg bg-zinc-800 flex gap-4 w-full min-w-md">
+              <div className="p-4 bg-red-500 rounded-full">
+                <Stethoscope/>
+              </div>
+              <div className="flex flex-col">
+                <div className="font-semibold text-xl"><h1>Kasus ISPA meningkat</h1></div>
+                <p className="text-sm text-zinc-400">Anak-anak dan lansia paling rentan.</p>
+              </div>
+            </div>
+            {/* Item 2 */}
+            <div className="section5-item p-4 rounded-lg bg-zinc-800 flex gap-4 w-full">
+              <div className="p-4 bg-red-500 rounded-full">
+                <School/>
+              </div>
+              <div className="flex flex-col">
+                <div className="font-semibold text-xl"><h1>Sekolah diliburkan</h1></div>
+                <p className="text-sm text-zinc-400">Pembelajaran terganggu.</p>
+              </div>
+            </div>
+            {/* Item 3 */}
+            <div className="section5-item p-4 rounded-lg bg-zinc-800 flex gap-4 w-full">
+              <div className="p-4 bg-red-500 rounded-full">
+                <Plane/>
+              </div>
+              <div className="flex flex-col">
+                <div className="font-semibold text-xl"><h1>Penerbangan tertunda</h1></div>
+                <p className="text-sm text-zinc-400">Jarak pandang turun drastis.</p>
+              </div>
+            </div>
+            {/* Item 4 */}
+            <div className="section5-item p-4 rounded-lg bg-zinc-800 flex gap-4 w-full">
+              <div className="p-4 bg-red-500 rounded-full">
+                <PawPrint/>
+              </div>
+              <div className="flex flex-col">
+                <div className="font-semibold text-xl"><h1>Satwa kehilangan rumah</h1></div>
+                <p className="text-sm text-zinc-400">Orangutan dan banyak spesies lain.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+          
+
+
+          
+        </div>
+
+        
+
+
+
+      </div>
+          
+      </div>
+    </>
+  )
+}
+
+function SectionBerawal() {
+  return(
+    <>
+    
+    </>
+  )
+}
+
+function splitTextByWord(text) {
+  const splited = text.split(' ');
+  return splited;
+}
