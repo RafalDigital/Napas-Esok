@@ -286,19 +286,21 @@ export default function StoryTellingRev() {
       <div ref={mainContainer} id="StoryTelling" className="w-full max-w-7xl mx-auto text-zinc-50 py-10 px-4">
 
       <div className="story-telling-hero">
+
         {/* Section 1 */}
         <div className="flex min-h-screen justify-center items-center">
           <div className="kalimantan-map absolute">
               <KalimantanMap/>
           </div>
-          <div className="absolute font-plusJktSans max-w-4xl flex min-h-screen justify-center items-center text-center text-[60px] [word-spacing:2rem] font-bold">
-            <h1 className="first-text flex  flex-wrap justify-center items-center">
+          <div className="absolute font-plusJktSans max-w-4xl flex min-h-screen justify-center items-center text-center">
+            <h1 className="first-text flex  flex-wrap justify-center items-center text-[60px] [word-spacing:2rem] font-bold">
               {firstText.map((word) => (
                 <span className="word mx-6">{word}</span>
               ))}
             </h1>
           </div>
 
+        {/* Section 2 */}
           <div className="text-section2 top-0 absolute flex flex-col justify-between mx-auto h-dvh w-full max-w-3xl pt-28 text-xl font-bold font-plusJktSans">
           <h1 className="section2-1 flex justify-start items-start">
             {section2Text1.map((word) => (
@@ -312,23 +314,8 @@ export default function StoryTellingRev() {
           </h1>
         </div>
 
-        <div className="text-section6 top-0 absolute flex flex-col gap-10 justify-center items-center mx-auto h-dvh w-full max-w-3xl pt-28">
-          <div className="text-4xl font-bold font-plusJktSans">
-              <h1 className="section6-1 flex flex-wrap justify-center">
-                {section3Text1.map((word) => (
-                    <span className="section6word mx-4">{word}</span>
-                  ))}
-              </h1>
-          </div>
-              <div className="qta-section flex gap-6 justify-center mx-auto h-dvh w-full max-w-7xl font-plusJktSans">
-                <button className="qta-button-1 qta-item flex gap-2 rounded-md h-fit cursor-pointer">Liat titik api hari ini <MoveRight/></button>
-                <button className="qta-button-2 qta-item flex gap-2 rounded-md h-fit cursor-pointer">Pelajari masalahnya</button>
-              </div>
-        </div>
-
-        {/* QTA Button */}
-        
-        
+                
+        {/* Section 3 */}        
         <div className="text-section3 absolute flex flex-col h-dvh w-full max-w-3xl right-0 items-center justify-center gap-2 font-plusJktSans">
           <div className="flex flex-col gap-2 items-end">
             <div className="section3-item text-7xl font-bold text-red-500">
@@ -350,6 +337,7 @@ export default function StoryTellingRev() {
           </div>
         </div>
 
+        {/* Section 4 */}
         <div className="text-section4 absolute flex flex-col h-dvh w-full max-w-3xl right-0 items-center justify-center gap-2 font-plusJktSans">
           <div className="flex flex-col items-end">
             <div className="section4-item text-6xl font-semibold mb-2">
@@ -367,10 +355,11 @@ export default function StoryTellingRev() {
           </div>
         </div>
 
+        {/* Section 5 */}
         <div className="text-section5 absolute flex flex-col h-dvh w-full max-w-3xl right-0 items-center justify-center gap-2 font-plusJktSans">
           <div className="flex flex-col items-end gap-4">
             {/* Item 1 */}
-            <div className="section5-item p-4 rounded-lg bg-zinc-800 flex gap-4 w-full min-w-md">
+            <div className="section5-item border border-zinc-700 p-4 rounded-lg bg-zinc-800 flex gap-4 w-full min-w-md">
               <div className="p-4 bg-red-500 rounded-full">
                 <Stethoscope/>
               </div>
@@ -380,7 +369,7 @@ export default function StoryTellingRev() {
               </div>
             </div>
             {/* Item 2 */}
-            <div className="section5-item p-4 rounded-lg bg-zinc-800 flex gap-4 w-full">
+            <div className="section5-item border border-zinc-700 p-4 rounded-lg bg-zinc-800 flex gap-4 w-full">
               <div className="p-4 bg-red-500 rounded-full">
                 <School/>
               </div>
@@ -390,7 +379,7 @@ export default function StoryTellingRev() {
               </div>
             </div>
             {/* Item 3 */}
-            <div className="section5-item p-4 rounded-lg bg-zinc-800 flex gap-4 w-full">
+            <div className="section5-item border border-zinc-700 p-4 rounded-lg bg-zinc-800 flex gap-4 w-full">
               <div className="p-4 bg-red-500 rounded-full">
                 <Plane/>
               </div>
@@ -400,7 +389,7 @@ export default function StoryTellingRev() {
               </div>
             </div>
             {/* Item 4 */}
-            <div className="section5-item p-4 rounded-lg bg-zinc-800 flex gap-4 w-full">
+            <div className="section5-item border border-zinc-700 p-4 rounded-lg bg-zinc-800 flex gap-4 w-full">
               <div className="p-4 bg-red-500 rounded-full">
                 <PawPrint/>
               </div>
@@ -412,7 +401,18 @@ export default function StoryTellingRev() {
           </div>
         </div>
 
-          
+        {/* Section 6 */}
+          <div className="text-section6 top-0 absolute flex flex-col gap-10 justify-center items-center mx-auto h-dvh w-full max-w-3xl pt-28">
+              <h1 className="section6-1 flex flex-wrap justify-center text-4xl font-bold font-plusJktSans">
+                {section3Text1.map((word) => (
+                    <span className="section6word mx-4">{word}</span>
+                  ))}
+              </h1>
+              <div className="qta-section flex gap-6 justify-center mx-auto h-dvh w-full max-w-7xl font-plusJktSans">
+                <button className="qta-button-1 qta-item flex gap-2 rounded-md h-fit cursor-pointer">Liat titik api hari ini <MoveRight/></button>
+                <button className="qta-button-2 qta-item flex gap-2 rounded-md h-fit cursor-pointer">Pelajari masalahnya</button>
+              </div>
+        </div>
 
 
           
