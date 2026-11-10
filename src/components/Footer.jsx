@@ -3,8 +3,8 @@ import { Info } from "lucide-react";
 export default function Footer() {
     return(
         <>
-            <footer className="w-full mt-32 px-32 py-12 bg-footer border-t border-neutral-700">
-                <div className="grid grid-cols-3 gap-10 max-w-7xl mx-auto">
+            <footer className="w-full mt-32 md:px-32 px-20 py-12 bg-footer border-t border-neutral-700">
+                <div className="grid md:grid-cols-3 max-md:grid-rows-3 gap-10 max-w-7xl mx-auto">
                     {/* Section 1 */}
                     <div className="flex flex-col gap-3">
                         <h1 className="font-bold font-plusJktSans text-2xl mb-1">Napas Esok</h1>
@@ -12,7 +12,7 @@ export default function Footer() {
                         <span className="text-xs flex items-center gap-2 text-neutral-500 font-inter"> <Info size={12}/> Data Diupdate : 10/11/2026</span>
                     </div>
                     {/* Section 2 */}
-                    <div className="flex flex-col items-center">
+                    <div className="flex flex-col md:items-center">
                         <div className="flex flex-col gap-3">
                             <h1 className="font-bold font-plusJktSans mb-1">Jelajahi</h1>
                             <a href="" className="text-neutral-400 hover:text-neutral-300 text-sm font-inter">Beranda</a>
@@ -22,7 +22,7 @@ export default function Footer() {
                         </div>
                     </div>
                     {/* Section 3 */}
-                    <div className="flex flex-col items-center">
+                    <div className="flex flex-col md:items-center">
                         content 3
                         
                     </div>

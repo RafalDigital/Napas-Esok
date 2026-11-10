@@ -1,5 +1,6 @@
 // REACT
 import { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 
 // GSAP
 import gsap from "gsap";
@@ -11,6 +12,7 @@ gsap.registerPlugin(ScrollTrigger, useGSAP)
 import WhiteLogo from '../assets/vectors/White-Logo.svg';
 
 export default function Navbar() {
+    const navigate = useNavigate();
     const navRef = useRef(null)
 
     useGSAP(() => {
@@ -39,10 +41,10 @@ export default function Navbar() {
                     <h1>Napas Esok</h1>
                 </div>
                 <div className="flex gap-12 font-inter text-sm pr-6 max-md:hidden">
-                    <a href="" className="px-3 py-1.5 bg-transparent hover:bg-neutral-800 rounded-lg">Beranda</a>
-                    <a href="" className="px-3 py-1.5 bg-transparent hover:bg-neutral-800 rounded-lg">Edukasi</a>
-                    <a href="" className="px-3 py-1.5 bg-transparent hover:bg-neutral-800 rounded-lg">Fitur</a>
-                    <a href="" className="px-3 py-1.5 bg-transparent hover:bg-neutral-800 rounded-lg">FAQ</a>
+                    <a onClick={() => navigate('/')} className="px-3 py-1.5 bg-transparent hover:bg-neutral-800 rounded-lg cursor-pointer">Beranda</a>
+                    <a onClick={() => navigate('/Edukasi')} className="px-3 py-1.5 bg-transparent hover:bg-neutral-800 rounded-lg cursor-pointer">Edukasi</a>
+                    <a onClick={() => navigate('/Fitur')} className="px-3 py-1.5 bg-transparent hover:bg-neutral-800 rounded-lg cursor-pointer">Fitur</a>
+                    <a onClick={() => navigate('/Faq')} className="px-3 py-1.5 bg-transparent hover:bg-neutral-800 rounded-lg cursor-pointer">FAQ</a>
                 </div>
 
                 <div className="pr-2 h-fit cursor-pointer md:hidden">

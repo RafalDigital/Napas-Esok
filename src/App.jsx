@@ -1,5 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import Home from "./pages/Home/Home";
+import Education from "./pages/Education/Education";
+import Features from "./pages/Features/Features";
+import Faq from "./pages/Faq/Faq";
 
 function App() {
 
@@ -9,6 +12,9 @@ function App() {
         <div className="min-h-[100dvh] bg-background text-white">
           <Routes>
             <Route path="/" element={<Home/>}/>
+            <Route path="/Edukasi" element={<Education/>}/>
+            <Route path="/Fitur" element={<Features/>}/>
+            <Route path="/Faq" element={<Faq/>}/>
           </Routes>
         </div>
       </Router>
