@@ -310,7 +310,7 @@ export default function StoryTelling() {
               <KalimantanMap/>
           </div>
           <div className="absolute font-plusJktSans max-w-4xl flex min-h-screen justify-center items-center text-center">
-            <h1 className="first-text flex  flex-wrap justify-center items-center lg:text-[60px] sm:text-12 text-10 [word-spacing:2rem] font-bold">
+            <h1 className="first-text flex  flex-wrap justify-center items-center lg:text-[60px] sm:text-16 text-14 [word-spacing:2rem] font-bold">
               {firstText.map((word, i) => (
                 <span key={i} className="word mx-6">{word}</span>
               ))}
@@ -333,8 +333,8 @@ export default function StoryTelling() {
 
                 
         {/* Section 3 */}        
-        <div className="text-section3 absolute flex flex-col h-dvh w-full max-w-3xl right-0 items-center justify-center gap-2 font-plusJktSans">
-          <div className="flex flex-col gap-2 items-end">
+        <div className="text-section3 absolute flex flex-col h-dvh w-full max-w-3xl right-0 items-center justify-center gap-2 font-plusJktSans max-md:pt-28">
+          <div className="flex flex-col gap-2 md:items-end items-center">
             <div className="section3-item text-7xl font-bold text-red-500">
               <h1 className="">1,6</h1>
             </div>
@@ -347,7 +347,7 @@ export default function StoryTelling() {
             <div className="section3-item text-xl font-light text-red-400">
               <h1>Dalam hitungan minggu</h1>
             </div>
-            <div className="section3-item flex flex-wrap gap-2 text-zinc-700">
+            <div className="section3-item flex flex-wrap gap-2 text-zinc-700 max-md:hidden">
               <h1>Sumber: KLHK (SiPongi). Verifikasi angka sebelum dipakai</h1>
               <Info/>
             </div>
@@ -355,12 +355,12 @@ export default function StoryTelling() {
         </div>
 
         {/* Section 4 */}
-        <div className="text-section4 absolute flex flex-col h-dvh w-full max-w-3xl right-0 items-center justify-center gap-2 font-plusJktSans">
-          <div className="flex flex-col items-end">
-            <div className="section4-item text-6xl font-semibold mb-2">
+        <div className="text-section4 absolute flex flex-col h-dvh w-full max-w-3xl right-0 items-center justify-center gap-2 font-plusJktSans max-md:pt-28">
+          <div className="flex flex-col md:items-end items-center">
+            <div className="section4-item text-6xl max-md:text-5xl font-semibold mb-2">
               <h1>Api padam.</h1>
             </div>
-            <div className="section4-item text-6xl font-semibold text-red-300">
+            <div className="section4-item text-6xl max-md:text-5xl font-semibold text-red-300">
               <h1>Asapnya tidak.</h1>
             </div>
             <div className="section4-item text-lg text-zinc-400 font-light mt-10">
@@ -373,7 +373,7 @@ export default function StoryTelling() {
         </div>
 
         {/* Section 5 */}
-        <div className="text-section5 absolute flex flex-col h-dvh w-full max-w-3xl right-0 items-center justify-center gap-2 font-plusJktSans">
+        <div className="text-section5 absolute flex flex-col h-dvh w-full max-w-3xl right-0 items-center justify-center gap-2 font-plusJktSans max-md:pt-28">
           <div className="flex flex-col items-end gap-4">
             {/* Item 1 */}
             <div className="section5-item border border-neutral-700 p-3 rounded-2xl bg-neutral-800 flex gap-4 w-full min-w-md">
