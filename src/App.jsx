@@ -1,20 +1,20 @@
-import Navbar from "./components/Navbar"
-import StoryTelling from "./pages/Home/Storytelling"
-import StoryTellingRev from "./pages/Home/Storytelling(Revisi)"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import Home from "./pages/Home/Home";
 
 function App() {
 
   return (
     <>
-      <div className="min-h-[100dvh] bg-background text-white flex">
-        <Navbar/>
-        {/* <StoryTelling/> */}
-        <StoryTellingRev/>
-        {/* <div className="h-[500rem]"></div> */}
-      </div>
+      <Router>
+        <div className="min-h-[100dvh] bg-background text-white">
+          <Routes>
+            <Route path="/" element={<Home/>}/>
+          </Routes>
+        </div>
+      </Router>
     </>
   )
 }
 
-export default App
-// dulunya bg-zinc-950
+export default App;
+

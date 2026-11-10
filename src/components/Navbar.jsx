@@ -8,6 +8,8 @@ import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP)
 
+import WhiteLogo from '../assets/vectors/White-Logo.svg';
+
 export default function Navbar() {
     const navRef = useRef(null)
 
@@ -31,18 +33,27 @@ export default function Navbar() {
     }, { scope : navRef })
     return(
         <>
-            <nav ref={navRef} className="flex fixed w-full right-0 left-0 top-0 bg-transparent font-notoSans px-4 py-4 justify-between">
-                <div className="item bg-zinc-800 px-4 border border-zinc-700 py-2 rounded-md">
+            <nav ref={navRef} className="flex fixed w-full right-0 left-0 top-0 bg-transparent font-plusJktSans px-4 py-4 justify-between items-center z-50 backdrop-blur-2xl">
+                <div className="pl-2 flex gap-2 justify-center items-center">
+                    <img src={WhiteLogo} className="w-12"/>
                     <h1>Napas Esok</h1>
                 </div>
-                <div className="item bg-zinc-800 px-3 border border-zinc-700 py-3 rounded-md h-fit cursor-pointer ">
-                    <div className="w-6 flex flex-col gap-1.5 justify-center items-center">
+                <div className="pr-2 h-fit cursor-pointer ">
+                    <div className="w-5 flex flex-col gap-1 justify-center items-center">
                         <span className="h-0.5 w-full bg-white rounded-full"></span>
                         <span className="h-0.5 w-full bg-white rounded-full"></span>
                         <span className="h-0.5 w-full bg-white rounded-full"></span>
                     </div>
                 </div>
             </nav>
+        </>
+    )
+}
+
+function MenuBar() {
+    return(
+        <>
+            
         </>
     )
 }

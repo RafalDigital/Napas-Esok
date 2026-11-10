@@ -10,7 +10,7 @@ import { useGSAP } from "@gsap/react";
 gsap.registerPlugin(ScrollTrigger, useGSAP)
 
 // ASSET
-import KalimantanMap from "../../assets/vectors/KalimantanMap";
+import KalimantanMap from "../../../assets/vectors/KalimantanMap";
 import { Info } from "lucide-react";
 import { Stethoscope } from "lucide-react";
 import { School } from "lucide-react";
@@ -18,7 +18,7 @@ import { Plane } from "lucide-react";
 import { PawPrint } from "lucide-react";
 import { MoveRight } from "lucide-react";
 
-export default function StoryTellingRev() {
+export default function StoryTelling() {
   const mainContainer = useRef(null);
 
   // Section 1
@@ -41,7 +41,7 @@ export default function StoryTellingRev() {
     .to({}, { duration: 0.2 })
     .fromTo(
       ".kalimantan-map",
-      { animationDelayS: 1, scale: 0.8, clipPath: "ellipse(0% 0% at 50% 50%)", opacity: 0 },
+      { scale: 0.8, clipPath: "ellipse(0% 0% at 50% 50%)", opacity: 0 },
       { clipPath: "ellipse(75% 75% at 50% 50%)", opacity: 1, duration: 1.5 }
     )
     .from(".first-text", {
@@ -63,9 +63,10 @@ export default function StoryTellingRev() {
     )
     .to('.text-section2', {
       scrollTrigger: {
-          trigger: 'text-section2',
+          trigger: '.text-section2',
+          pin: true,
           // markers: true,
-          pin: true
+          end: 'bottom bottom'
         } 
     })
     
@@ -105,7 +106,7 @@ export default function StoryTellingRev() {
       {}
     )
     gsap.fromTo('.section6-1',
-      {y: 0},
+      {y: 70},
       {}
     )
     gsap.fromTo('.qta-section',
@@ -132,13 +133,13 @@ export default function StoryTellingRev() {
       scrollTrigger: {
         trigger: '.story-telling-hero',
         start: "top 40px",
-        end: "+=3300",
+        end: "+=4000",
         pin: true, 
         scrub: 1,   
       },
     });
 
-    tl.to('.kalimantan-map', {scale: 1.02})
+    tl.to('.kalimantan-map', {scale: 1.005})
       .fromTo(
         ".section2word",
         { opacity: 0, y: 15,},
@@ -252,7 +253,7 @@ export default function StoryTellingRev() {
           scale: 0.4, x: 0
         },
       )
-      .to('.kalimantan-map', {y: -200})
+      .to('.kalimantan-map', {y: -150})
       .fromTo(
         ".section6word",
         { opacity: 0, y: 15,},
@@ -294,8 +295,8 @@ export default function StoryTellingRev() {
           </div>
           <div className="absolute font-plusJktSans max-w-4xl flex min-h-screen justify-center items-center text-center">
             <h1 className="first-text flex  flex-wrap justify-center items-center text-[60px] [word-spacing:2rem] font-bold">
-              {firstText.map((word) => (
-                <span className="word mx-6">{word}</span>
+              {firstText.map((word, i) => (
+                <span key={i} className="word mx-6">{word}</span>
               ))}
             </h1>
           </div>
@@ -303,13 +304,13 @@ export default function StoryTellingRev() {
         {/* Section 2 */}
           <div className="text-section2 top-0 absolute flex flex-col justify-between mx-auto h-dvh w-full max-w-3xl pt-28 text-xl font-bold font-plusJktSans">
           <h1 className="section2-1 flex justify-start items-start">
-            {section2Text1.map((word) => (
-                <span className="section2word mx-1">{word}</span>
+            {section2Text1.map((word, i) => (
+                <span key={i} className="section2word mx-1">{word}</span>
               ))}
           </h1>
           <h1 className="section2-2 flex justify-end items-end">
-            {section2Text2.map((word) => (
-                <span className="section2word mx-1">{word}</span>
+            {section2Text2.map((word, i) => (
+                <span key={i} className="section2word mx-1">{word}</span>
               ))}
           </h1>
         </div>
@@ -402,15 +403,15 @@ export default function StoryTellingRev() {
         </div>
 
         {/* Section 6 */}
-          <div className="text-section6 top-0 absolute flex flex-col gap-10 justify-center items-center mx-auto h-dvh w-full max-w-3xl pt-28">
+          <div className="text-section6 top-0 absolute flex flex-col gap-28 justify-center items-center mx-auto h-dvh w-full max-w-3xl pt-28">
               <h1 className="section6-1 flex flex-wrap justify-center text-4xl font-bold font-plusJktSans">
-                {section3Text1.map((word) => (
-                    <span className="section6word mx-4">{word}</span>
+                {section3Text1.map((word, i) => (
+                    <span key={i} className="section6word mx-4">{word}</span>
                   ))}
               </h1>
               <div className="qta-section flex gap-6 justify-center mx-auto h-dvh w-full max-w-7xl font-plusJktSans">
-                <button className="qta-button-1 qta-item flex gap-2 rounded-md h-fit cursor-pointer">Liat titik api hari ini <MoveRight/></button>
-                <button className="qta-button-2 qta-item flex gap-2 rounded-md h-fit cursor-pointer">Pelajari masalahnya</button>
+                <button className="qta-item flex gap-2 rounded-md h-fit cursor-pointer bg-red-500 px-4 py-3 min-w-56 max-w-56 justify-center">Liat titik api hari ini <MoveRight/></button>
+                <button className="qta-item flex gap-2 rounded-md h-fit cursor-pointer border border-zinc-700 px-4 py-3 min-w-56 max-w-56 justify-center">Pelajari masalahnya</button>
               </div>
         </div>
 
