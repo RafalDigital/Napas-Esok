@@ -33,6 +33,23 @@ export default function StoryTelling() {
   
   
   useGSAP(() => {
+
+    // Responsive GSAP
+    const matchMedia = gsap.matchMedia(mainContainer.current)
+
+    matchMedia.add({
+      isDesktop: "(min-width: 1024px)",
+      isTablet: "(min-width: 576px) and (max-width: 1023px)",
+      isMobile: "(max-width: 576px)"
+    }, (context) => {
+      const { isDesktop, isTablet, isMobile } = context.conditions
+    
+      const mapSection3Scale = isDesktop ? 0.8 : isTablet ? 0.65 : 0.45
+      const mapSection3X = isDesktop ?  -300 : isTablet ? -190 : 0
+      const mapSection3Y = isMobile ? -170 : 0
+      const mapEndScale = isMobile ? 0.35 : 0.4
+      const mapEndY = isMobile ? -190 : -150
+
     const introTl = gsap.timeline({
       defaults: { ease: "none" }
     });
@@ -41,7 +58,7 @@ export default function StoryTelling() {
     .to({}, { duration: 0.2 })
     .fromTo(
       ".kalimantan-map",
-      { scale: 0.8, clipPath: "ellipse(0% 0% at 50% 50%)", opacity: 0 },
+      { scale: isMobile ? 0.6 : 0.8, clipPath: "ellipse(0% 0% at 50% 50%)", opacity: 0 },
       { clipPath: "ellipse(75% 75% at 50% 50%)", opacity: 1, duration: 1.5 }
     )
     .from(".first-text", {
@@ -86,19 +103,15 @@ export default function StoryTelling() {
 
     // Ngakalin dikit
     gsap.fromTo('.section2-1', 
-      {y: 40, x: 40},
+      {y: 40, x: isMobile ? 16 : 40},
       {}
     )
     gsap.fromTo('.section2-2', 
-      {y: -140, x: -40},
-      {}
-    )
-    gsap.fromTo('.section6-1', 
-      {y: -280},
+      {y: isMobile ? -120 : -140, x: isMobile ? -16 : -40},
       {}
     )
     gsap.fromTo('.text-section5',
-      {x: 100},
+      {x: isDesktop ? 100 : 0},
       {}
     )
     gsap.fromTo('.text-section6',
@@ -106,11 +119,11 @@ export default function StoryTelling() {
       {}
     )
     gsap.fromTo('.section6-1',
-      {y: 70},
+      {y: -100},
       {}
     )
     gsap.fromTo('.qta-section',
-      {},
+      {y : -180},
       {}
     )
 
@@ -173,7 +186,7 @@ export default function StoryTelling() {
         ".red-dot",
         {r: 360},
       )
-      .to('.kalimantan-map', {scale: 0.8, x: -300})
+      .to('.kalimantan-map', {scale: mapSection3Scale, x: mapSection3X, y: mapSection3Y})
       // Section 3
       .fromTo(
         ".section3-item",
@@ -250,7 +263,7 @@ export default function StoryTelling() {
         ".kalimantan-map",
         { },
         {
-          scale: 0.4, x: 0
+          scale: mapEndScale, x: 0
         },
       )
       .to('.kalimantan-map', {y: -150})
@@ -279,7 +292,9 @@ export default function StoryTelling() {
       // "<0"
       )
 
+      })
 
+      return () => matchMedia.revert();
   }, { scope : mainContainer })
   
   return(
@@ -360,8 +375,8 @@ export default function StoryTelling() {
         <div className="text-section5 absolute flex flex-col h-dvh w-full max-w-3xl right-0 items-center justify-center gap-2 font-plusJktSans">
           <div className="flex flex-col items-end gap-4">
             {/* Item 1 */}
-            <div className="section5-item border border-zinc-700 p-4 rounded-lg bg-zinc-800 flex gap-4 w-full min-w-md">
-              <div className="p-4 bg-red-500 rounded-full">
+            <div className="section5-item border border-neutral-700 p-3 rounded-2xl bg-neutral-800 flex gap-4 w-full min-w-md">
+              <div className="p-4 bg-red-500 rounded-xl">
                 <Stethoscope/>
               </div>
               <div className="flex flex-col">
@@ -370,8 +385,8 @@ export default function StoryTelling() {
               </div>
             </div>
             {/* Item 2 */}
-            <div className="section5-item border border-zinc-700 p-4 rounded-lg bg-zinc-800 flex gap-4 w-full">
-              <div className="p-4 bg-red-500 rounded-full">
+            <div className="section5-item border border-neutral-700 p-3 rounded-2xl bg-neutral-800 flex gap-4 w-full">
+              <div className="p-4 bg-red-500 rounded-xl">
                 <School/>
               </div>
               <div className="flex flex-col">
@@ -380,8 +395,8 @@ export default function StoryTelling() {
               </div>
             </div>
             {/* Item 3 */}
-            <div className="section5-item border border-zinc-700 p-4 rounded-lg bg-zinc-800 flex gap-4 w-full">
-              <div className="p-4 bg-red-500 rounded-full">
+            <div className="section5-item border border-neutral-700 p-3 rounded-2xl bg-neutral-800 flex gap-4 w-full">
+              <div className="p-4 bg-red-500 rounded-xl">
                 <Plane/>
               </div>
               <div className="flex flex-col">
@@ -390,8 +405,8 @@ export default function StoryTelling() {
               </div>
             </div>
             {/* Item 4 */}
-            <div className="section5-item border border-zinc-700 p-4 rounded-lg bg-zinc-800 flex gap-4 w-full">
-              <div className="p-4 bg-red-500 rounded-full">
+            <div className="section5-item border border-neutral-700 p-3 rounded-2xl bg-neutral-800 flex gap-4 w-full">
+              <div className="p-4 bg-red-500 rounded-xl">
                 <PawPrint/>
               </div>
               <div className="flex flex-col">
@@ -409,9 +424,9 @@ export default function StoryTelling() {
                     <span key={i} className="section6word mx-4">{word}</span>
                   ))}
               </h1>
-              <div className="qta-section flex gap-6 justify-center mx-auto h-dvh w-full max-w-7xl font-plusJktSans">
-                <button className="qta-item flex gap-2 rounded-md h-fit cursor-pointer bg-red-500 px-4 py-3 min-w-56 max-w-56 justify-center">Liat titik api hari ini <MoveRight/></button>
-                <button className="qta-item flex gap-2 rounded-md h-fit cursor-pointer border border-zinc-700 px-4 py-3 min-w-56 max-w-56 justify-center">Pelajari masalahnya</button>
+              <div className="qta-section flex gap-6 justify-center mx-auto h-fit w-full max-w-7xl font-plusJktSans">
+                <button className="qta-item flex gap-2 rounded-2xl h-fit cursor-pointer border border-red-400 bg-red-500 hover:bg-transparent px-4 py-3 min-w-56 max-w-56 justify-center transition-all">Lihat titik api hari ini <MoveRight/></button>
+                <button className="qta-item flex gap-2 rounded-2xl h-fit cursor-pointer border border-neutral-600 hover:border-neutral-700 px-4 py-3 min-w-56 max-w-56 justify-center transition-all">Pelajari masalahnya</button>
               </div>
         </div>
 

@@ -3,7 +3,7 @@ import { Info } from "lucide-react";
 export default function Footer() {
     return(
         <>
-            <footer className="w-full px-32 py-12 bg-footer border-t border-neutral-700">
+            <footer className="w-full mt-32 px-32 py-12 bg-footer border-t border-neutral-700">
                 <div className="grid grid-cols-3 gap-10 max-w-7xl mx-auto">
                     {/* Section 1 */}
                     <div className="flex flex-col gap-3">
@@ -15,10 +15,10 @@ export default function Footer() {
                     <div className="flex flex-col items-center">
                         <div className="flex flex-col gap-3">
                             <h1 className="font-bold font-plusJktSans mb-1">Jelajahi</h1>
-                            <a href="" className="text-neutral-400 text-sm font-inter">Beranda</a>
-                            <a href="" className="text-neutral-400 text-sm font-inter">Edukasi</a>
-                            <a href="" className="text-neutral-400 text-sm font-inter">Fitur</a>
-                            <a href="" className="text-neutral-400 text-sm font-inter">FAQ</a>
+                            <a href="" className="text-neutral-400 hover:text-neutral-300 text-sm font-inter">Beranda</a>
+                            <a href="" className="text-neutral-400 hover:text-neutral-300 text-sm font-inter">Edukasi</a>
+                            <a href="" className="text-neutral-400 hover:text-neutral-300 text-sm font-inter">Fitur</a>
+                            <a href="" className="text-neutral-400 hover:text-neutral-300 text-sm font-inter">FAQ</a>
                         </div>
                     </div>
                     {/* Section 3 */}
