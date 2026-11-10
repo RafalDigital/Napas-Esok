@@ -373,7 +373,7 @@ export default function StoryTelling() {
         </div>
 
         {/* Section 5 */}
-        <div className="text-section5 absolute flex flex-col h-dvh w-full max-w-3xl right-0 items-center justify-center gap-2 font-plusJktSans max-md:pt-36">
+        <div className="text-section5 absolute flex flex-col h-dvh w-full max-w-3xl right-0 items-center justify-center gap-2 font-plusJktSans max-md:pt-56">
           <div className="flex flex-col items-end gap-4 max-md:scale-75">
             {/* Item 1 */}
             <div className="section5-item border border-neutral-700 p-3 rounded-2xl bg-neutral-800 flex gap-4 w-full min-w-md">
@@ -425,7 +425,7 @@ export default function StoryTelling() {
                     <span key={i} className="section6word mx-4">{word}</span>
                   ))}
               </h1>
-              <div className="qta-section flex gap-6 justify-center mx-auto h-fit w-full max-w-7xl font-plusJktSans">
+              <div className="qta-section flex max-md:flex-col gap-6 max-md:items-center md:justify-center mx-auto h-fit w-full max-w-7xl font-plusJktSans">
                 <button className="qta-item flex gap-2 rounded-2xl h-fit cursor-pointer border border-red-400 bg-red-500 hover:bg-transparent px-4 py-3 min-w-56 max-w-56 justify-center transition-all">Lihat titik api hari ini <MoveRight/></button>
                 <button className="qta-item flex gap-2 rounded-2xl h-fit cursor-pointer border border-neutral-600 hover:border-neutral-700 px-4 py-3 min-w-56 max-w-56 justify-center transition-all">Pelajari masalahnya</button>
               </div>
