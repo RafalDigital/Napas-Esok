@@ -425,9 +425,9 @@ export default function StoryTelling() {
                     <span key={i} className="section6word mx-4">{word}</span>
                   ))}
               </h1>
-              <div className="qta-section flex max-md:flex-col gap-6 max-md:items-center md:justify-center mx-auto h-fit w-full max-w-7xl font-plusJktSans">
-                <button className="qta-item flex gap-2 rounded-2xl h-fit cursor-pointer border border-red-400 bg-red-500 hover:bg-transparent px-4 py-3 min-w-56 max-w-56 justify-center transition-all">Lihat titik api hari ini <MoveRight/></button>
-                <button className="qta-item flex gap-2 rounded-2xl h-fit cursor-pointer border border-neutral-600 hover:border-neutral-700 px-4 py-3 min-w-56 max-w-56 justify-center transition-all">Pelajari masalahnya</button>
+              <div className="qta-section flex max-md:flex-col gap-6 max-md:gap-4 max-md:items-center md:justify-center mx-auto h-fit w-full max-w-7xl font-plusJktSans">
+                <button className="qta-item flex gap-2 rounded-2xl h-fit cursor-pointer border border-red-400 bg-red-500 hover:bg-transparent px-4 py-3 min-w-56 md:max-w-56 w-60 justify-center transition-all">Lihat titik api hari ini <MoveRight/></button>
+                <button className="qta-item flex gap-2 rounded-2xl h-fit cursor-pointer border border-neutral-600 hover:border-neutral-700 px-4 py-3 min-w-56 md:max-w-56 w-60 justify-center transition-all">Pelajari masalahnya</button>
               </div>
         </div>
 
