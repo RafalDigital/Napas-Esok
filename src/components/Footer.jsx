@@ -1,3 +1,6 @@
+import { RiInstagramLine } from "@remixicon/react";
+import { RiTelegram2Line } from "@remixicon/react";
+import { RiMailLine } from "@remixicon/react";
 import { Info } from "lucide-react";
 
 export default function Footer() {
@@ -23,8 +26,12 @@ export default function Footer() {
                     </div>
                     {/* Section 3 */}
                     <div className="flex flex-col md:items-center">
-                        content 3
-                        
+                        <div className="flex flex-col gap-3">
+                            <h1 className="font-bold font-plusJktSans mb-1">Hubungi Kami</h1>
+                            <a href="" className="flex gap-1.5 items-center text-neutral-400 hover:text-neutral-300 text-sm font-inter"><RiMailLine size={16}/> kontak@napasesok.id</a>
+                            <a href="" className="flex gap-1.5 items-center text-neutral-400 hover:text-neutral-300 text-sm font-inter"><RiInstagramLine size={16}/> @napasesok.id</a>
+                            <a href="" className="flex gap-1.5 items-center text-neutral-400 hover:text-neutral-300 text-sm font-inter"><RiTelegram2Line size={16}/> @napasesok_id</a>
+                        </div>
                     </div>
                 </div>
                 <div className="w-full max-w-7xl mx-auto h-[1px] bg-neutral-700 rounded-full mt-12 mb-6"></div>
