@@ -38,21 +38,20 @@ export default function Navbar() {
                     <img src={WhiteLogo} className="w-12"/>
                     <h1>Napas Esok</h1>
                 </div>
-                <div className="flex gap-12 font-inter text-sm pr-6">
+                <div className="flex gap-12 font-inter text-sm pr-6 max-md:hidden">
                     <a href="" className="px-3 py-1.5 bg-transparent hover:bg-neutral-800 rounded-lg">Beranda</a>
                     <a href="" className="px-3 py-1.5 bg-transparent hover:bg-neutral-800 rounded-lg">Edukasi</a>
                     <a href="" className="px-3 py-1.5 bg-transparent hover:bg-neutral-800 rounded-lg">Fitur</a>
                     <a href="" className="px-3 py-1.5 bg-transparent hover:bg-neutral-800 rounded-lg">FAQ</a>
                 </div>
 
-                {/* Untuk Mobile */}
-                {/* <div className="pr-2 h-fit cursor-pointer ">
+                <div className="pr-2 h-fit cursor-pointer md:hidden">
                     <div className="w-5 flex flex-col gap-1 justify-center items-center">
                         <span className="h-0.5 w-full bg-white rounded-full"></span>
                         <span className="h-0.5 w-full bg-white rounded-full"></span>
                         <span className="h-0.5 w-full bg-white rounded-full"></span>
                     </div>
-                </div> */}
+                </div>
             </nav>
             {/* <MenuBar/> */}
         </>

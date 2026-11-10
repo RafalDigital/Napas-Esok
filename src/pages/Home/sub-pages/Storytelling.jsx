@@ -44,7 +44,7 @@ export default function StoryTelling() {
     }, (context) => {
       const { isDesktop, isTablet, isMobile } = context.conditions
 
-      const mapSection2Scale = isDesktop ? 1.005 : isTablet ? 1.001 : 1
+      const mapSection2Scale = isDesktop ? 1.005 : isTablet ? 1.001 : 0.85
       const mapSection3Scale = isDesktop ? 0.8 : isTablet ? 0.65 : 0.45
       const mapSection3X = isDesktop ?  -300 : isTablet ? -190 : 0
       const mapSection3Y = isMobile ? -170 : 0
@@ -108,7 +108,7 @@ export default function StoryTelling() {
       {}
     )
     gsap.fromTo('.section2-2', 
-      {y: isMobile ? -120 : -140, x: isMobile ? -16 : -40},
+      {y: isMobile ? 40 : -140, x: isMobile ? 16 : -40},
       {}
     )
     gsap.fromTo('.text-section5',
@@ -310,7 +310,7 @@ export default function StoryTelling() {
               <KalimantanMap/>
           </div>
           <div className="absolute font-plusJktSans max-w-4xl flex min-h-screen justify-center items-center text-center">
-            <h1 className="first-text flex  flex-wrap justify-center items-center lg:text-[60px] sm:text-11 text-8 [word-spacing:2rem] font-bold">
+            <h1 className="first-text flex  flex-wrap justify-center items-center lg:text-[60px] sm:text-12 text-10 [word-spacing:2rem] font-bold">
               {firstText.map((word, i) => (
                 <span key={i} className="word mx-6">{word}</span>
               ))}
@@ -318,13 +318,13 @@ export default function StoryTelling() {
           </div>
 
         {/* Section 2 */}
-          <div className="text-section2 top-0 absolute flex flex-col justify-between mx-auto h-dvh w-full max-w-3xl pt-28 md:text-xl text-md font-bold font-plusJktSans">
+          <div className="text-section2 top-0 absolute flex flex-col md:justify-between mx-auto h-dvh w-full max-w-3xl pt-28 md:text-xl text-md font-bold font-plusJktSans">
           <h1 className="section2-1 flex justify-start items-start">
             {section2Text1.map((word, i) => (
                 <span key={i} className="section2word mx-1">{word}</span>
               ))}
           </h1>
-          <h1 className="section2-2 flex justify-end items-end">
+          <h1 className="section2-2 flex md:justify-end md:items-end">
             {section2Text2.map((word, i) => (
                 <span key={i} className="section2word mx-1">{word}</span>
               ))}
