@@ -310,7 +310,7 @@ export default function StoryTelling() {
               <KalimantanMap/>
           </div>
           <div className="absolute font-plusJktSans max-w-4xl flex min-h-screen justify-center items-center text-center">
-            <h1 className="first-text flex  flex-wrap justify-center items-center lg:text-[60px] sm:text-16 text-14 [word-spacing:2rem] font-bold">
+            <h1 className="first-text flex  flex-wrap justify-center items-center lg:text-[60px] sm:text-2xl text-xl [word-spacing:2rem] font-bold">
               {firstText.map((word, i) => (
                 <span key={i} className="word mx-6">{word}</span>
               ))}
@@ -420,7 +420,7 @@ export default function StoryTelling() {
 
         {/* Section 6 */}
           <div className="text-section6 top-0 absolute flex flex-col gap-28 justify-center items-center mx-auto h-dvh w-full max-w-3xl pt-28">
-              <h1 className="section6-1 flex flex-wrap justify-center text-4xl font-bold font-plusJktSans">
+              <h1 className="section6-1 flex flex-wrap justify-center md:text-4xl text-2xl font-bold font-plusJktSans">
                 {section3Text1.map((word, i) => (
                     <span key={i} className="section6word mx-4">{word}</span>
                   ))}
