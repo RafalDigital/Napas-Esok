@@ -333,7 +333,7 @@ export default function StoryTelling() {
 
                 
         {/* Section 3 */}        
-        <div className="text-section3 absolute flex flex-col h-dvh w-full max-w-3xl right-0 items-center justify-center gap-2 font-plusJktSans max-md:pt-36">
+        <div className="text-section3 absolute flex flex-col h-dvh w-full max-w-3xl right-0 items-center justify-center gap-2 font-plusJktSans max-md:pt-40">
           <div className="flex flex-col gap-2 md:items-end items-center">
             <div className="section3-item text-7xl font-bold text-red-500">
               <h1 className="">1,6</h1>
@@ -355,18 +355,18 @@ export default function StoryTelling() {
         </div>
 
         {/* Section 4 */}
-        <div className="text-section4 absolute flex flex-col h-dvh w-full max-w-3xl right-0 items-center justify-center gap-2 font-plusJktSans max-md:pt-36">
+        <div className="text-section4 absolute flex flex-col h-dvh w-full max-w-3xl right-0 items-center justify-center gap-2 font-plusJktSans max-md:pt-40">
           <div className="flex flex-col md:items-end items-center">
-            <div className="section4-item text-6xl max-md:text-5xl font-semibold mb-2">
+            <div className="section4-item text-6xl max-md:text-4xl font-semibold mb-2">
               <h1>Api padam.</h1>
             </div>
-            <div className="section4-item text-6xl max-md:text-5xl font-semibold text-red-300">
+            <div className="section4-item text-6xl max-md:text-4xl font-semibold text-red-300">
               <h1>Asapnya tidak.</h1>
             </div>
-            <div className="section4-item text-lg text-zinc-400 font-light mt-10">
+            <div className="section4-item text-lg max-md:text-md text-zinc-400 font-light mt-10">
               <h1>Terbawa angin ke kota kota,</h1>
             </div>
-            <div className="section4-item text-lg text-zinc-400 font-light">
+            <div className="section4-item text-lg max-md:text-md text-zinc-400 font-light">
               <h1>Bahkan melintasi batas negara.</h1>
             </div>
           </div>
@@ -374,15 +374,15 @@ export default function StoryTelling() {
 
         {/* Section 5 */}
         <div className="text-section5 absolute flex flex-col h-dvh w-full max-w-3xl right-0 items-center justify-center gap-2 font-plusJktSans max-md:pt-36">
-          <div className="flex flex-col items-end gap-4">
+          <div className="flex flex-col items-end gap-4 max-md:scale-75">
             {/* Item 1 */}
-            <div className="section5-item border border-neutral-700 p-3 rounded-2xl bg-neutral-800 flex gap-4 w-full md:min-w-md">
+            <div className="section5-item border border-neutral-700 p-3 rounded-2xl bg-neutral-800 flex gap-4 w-full min-w-md">
               <div className="p-4 bg-red-500 rounded-xl">
                 <Stethoscope/>
               </div>
               <div className="flex flex-col">
-                <div className="font-semibold md:text-xl text-md"><h1>Kasus ISPA meningkat</h1></div>
-                <p className="md:text-sm text-base text-zinc-400">Anak-anak dan lansia paling rentan.</p>
+                <div className="font-semibold text-xl"><h1>Kasus ISPA meningkat</h1></div>
+                <p className="text-sm text-zinc-400">Anak-anak dan lansia paling rentan.</p>
               </div>
             </div>
             {/* Item 2 */}
@@ -391,8 +391,8 @@ export default function StoryTelling() {
                 <School/>
               </div>
               <div className="flex flex-col">
-                <div className="font-semibold md:text-xl text-md"><h1>Sekolah diliburkan</h1></div>
-                <p className="md:text-sm text-base text-zinc-400">Pembelajaran terganggu.</p>
+                <div className="font-semibold text-xl"><h1>Sekolah diliburkan</h1></div>
+                <p className="text-sm text-zinc-400">Pembelajaran terganggu.</p>
               </div>
             </div>
             {/* Item 3 */}
@@ -401,8 +401,8 @@ export default function StoryTelling() {
                 <Plane/>
               </div>
               <div className="flex flex-col">
-                <div className="font-semibold md:text-xl text-md"><h1>Penerbangan tertunda</h1></div>
-                <p className="md:text-sm text-base text-zinc-400">Jarak pandang turun drastis.</p>
+                <div className="font-semibold text-xl"><h1>Penerbangan tertunda</h1></div>
+                <p className="text-sm text-zinc-400">Jarak pandang turun drastis.</p>
               </div>
             </div>
             {/* Item 4 */}
@@ -411,8 +411,8 @@ export default function StoryTelling() {
                 <PawPrint/>
               </div>
               <div className="flex flex-col">
-                <div className="font-semibold md:text-xl text-md"><h1>Satwa kehilangan rumah</h1></div>
-                <p className="md:text-sm text-base text-zinc-400">Orangutan dan banyak spesies lain.</p>
+                <div className="font-semibold text-xl"><h1>Satwa kehilangan rumah</h1></div>
+                <p className="text-sm text-zinc-400">Orangutan dan banyak spesies lain.</p>
               </div>
             </div>
           </div>
