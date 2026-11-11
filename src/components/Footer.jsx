@@ -6,7 +6,7 @@ import { Info } from "lucide-react";
 export default function Footer() {
     return(
         <>
-            <footer className="w-full mt-32 md:px-32 px-20 py-12 bg-footer border-t border-neutral-700">
+            <footer className="w-full md:px-32 px-20 py-12 bg-footer border-t border-neutral-700">
                 <div className="grid md:grid-cols-3 max-md:grid-rows-3 gap-10 max-w-7xl mx-auto">
                     {/* Section 1 */}
                     <div className="flex flex-col gap-3">

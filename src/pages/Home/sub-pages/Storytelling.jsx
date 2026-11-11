@@ -300,7 +300,7 @@ export default function StoryTelling() {
   
   return(
     <>
-      <div ref={mainContainer} id="StoryTelling" className="w-full max-w-7xl mx-auto text-zinc-50 py-10 px-4">
+      <div ref={mainContainer} id="StoryTelling" className="w-full max-w-7xl mx-auto text-zinc-50 py-10 px-4 mb-32">
 
       <div className="story-telling-hero">
 

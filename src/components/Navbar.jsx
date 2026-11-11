@@ -17,25 +17,6 @@ export default function Navbar() {
     const navRef = useRef(null)
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    useGSAP(() => {
-        const navTl = gsap.timeline({})
-        navTl
-        .to('.item', {duration: 2})
-        .fromTo('.item', 
-            {
-                opacity: 0,
-                y: -50,
-
-            },{
-                opacity: 1,
-                y: 0,
-                duration: 0.4,
-                stagger: 0.4,
-                ease: "power2.out"
-            }
-        )
-    }, { scope : navRef })
-
     // Toggle Menu
     const toggleMenu = () => {
         setIsMenuOpen((p) => !p)
@@ -49,11 +30,11 @@ export default function Navbar() {
     return(
         <>
             <nav ref={navRef} className="flex fixed w-full right-0 left-0 top-0 bg-background font-plusJktSans px-4 py-4 justify-between items-center z-50">
-                <div className="pl-2 flex gap-2 justify-center items-center">
+                <div className="md:pl-2 flex gap-2 justify-center items-center">
                     <img src={WhiteLogo} className="w-12"/>
                     <h1>Napas Esok</h1>
                 </div>
-                <div className="flex gap-12 font-inter text-sm pr-6 max-md:hidden">
+                <div className="flex gap-8 font-inter text-sm pr-6 max-md:hidden">
                     <a onClick={() => navigate('/')} className="px-3 py-1.5 bg-transparent hover:bg-neutral-800 rounded-lg cursor-pointer">Beranda</a>
                     <a onClick={() => navigate('/Edukasi')} className="px-3 py-1.5 bg-transparent hover:bg-neutral-800 rounded-lg cursor-pointer">Edukasi</a>
                     <a onClick={() => navigate('/Fitur')} className="px-3 py-1.5 bg-transparent hover:bg-neutral-800 rounded-lg cursor-pointer">Fitur</a>
