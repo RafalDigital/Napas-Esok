@@ -71,12 +71,12 @@ function MenuBar({ isOpen, onClose, onNavigate }) {
                 duration: 0.1,
             })
             gsap.fromTo(menuRef.current,
-                { y: "-100%", opacity: 0 },
-                { y: "0%", opacity: 1, duration: 0.4, ease: "power3.out" }
+                {y: "-100%", opacity: 0 },
+                {y: "0%", opacity: 1, duration: 0.4, ease: "power3.out"}
             )
             gsap.fromTo(".item",
-                { opacity: 0, y: -15 },
-                { opacity: 1, y: 0, duration: 0.3, stagger: 0.08, delay: 0.1, ease: "power2.out" }
+                {opacity: 0, y: -15},
+                {opacity: 1, y: 0, duration: 0.3, stagger: 0.08, delay: 0.1, ease: "power2.out"}
             )
         } else {
             gsap.to(menuRef.current, {
