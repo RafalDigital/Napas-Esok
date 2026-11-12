@@ -310,10 +310,10 @@ export default function StoryTelling() {
           <div className="kalimantan-map absolute">
               <KalimantanMap/>
           </div>
-          <div className="absolute font-plusJktSans max-w-4xl flex min-h-screen justify-center items-center text-center">
-            <h1 className="first-text flex  flex-wrap justify-center items-center lg:text-[60px]  text-2xl [word-spacing:2rem] font-bold">
+          <div className="absolute font-plusJktSans max-w-7xl flex min-h-screen justify-center items-center text-center">
+            <h1 className="first-text flex  flex-wrap justify-center items-center lg:text-6xl  text-2xl [word-spacing:2rem] font-bold">
               {firstText.map((word, i) => (
-                <span key={i} className="word mx-6">{word}</span>
+                <span key={i} className="word max-md:mx-2 mx-6 lg:my-2">{word}</span>
               ))}
             </h1>
           </div>
@@ -334,18 +334,18 @@ export default function StoryTelling() {
 
                 
         {/* Section 3 */}        
-        <div className="text-section3 absolute flex flex-col h-dvh w-full max-w-3xl right-0 items-center justify-center ap-2 font-plusJktSans max-md:pt-40">
+        <div className="text-section3 absolute flex flex-col h-dvh w-full max-w-3xl right-0 items-center justify-center gap-2 font-plusJktSans max-md:pt-40">
           <div className="flex flex-col gap-2 md:items-end items-center">
-            <div className="section3-item text-7xl font-bold text-red-500">
+            <div className="section3-item text-7xl max-md:text-4xl font-bold text-red-500">
               <h1 className="">1,6</h1>
             </div>
-            <div className="section3-item text-5xl font-medium">
+            <div className="section3-item text-5xl max-md:text-3xl font-medium">
               <h1>juta hektar</h1>
             </div>
-            <div className="section3-item text-lg font-light text-zinc-400">
+            <div className="section3-item text-lg max-md:text-base font-light text-zinc-400">
               <h1>lahan terbakar pada tahun 2019</h1>
             </div>
-            <div className="section3-item text-xl font-light text-red-400">
+            <div className="section3-item text-xl max-md:text-lg font-light text-red-400">
               <h1>Dalam hitungan minggu</h1>
             </div>
             <div className="section3-item flex flex-wrap gap-2 text-zinc-700 max-md:hidden">
@@ -421,9 +421,9 @@ export default function StoryTelling() {
 
         {/* Section 6 */}
           <div className="text-section6 top-0 absolute flex flex-col gap-28 justify-center items-center mx-auto h-dvh w-full md:max-w-3xl pt-28">
-              <h1 className="section6-1 flex flex-wrap justify-center md:text-4xl text-2xl font-bold font-plusJktSans">
+              <h1 className="section6-1 flex flex-wrap justify-center md:text-4xl text-3xl font-bold font-plusJktSans">
                 {section3Text1.map((word, i) => (
-                    <span key={i} className="section6word mx-4">{word}</span>
+                    <span key={i} className="section6word mx-4 max-md:mx-2">{word}</span>
                   ))}
               </h1>
               <div className="qta-section flex max-md:flex-col gap-6 max-md:gap-4 max-md:items-center md:justify-center mx-auto h-fit w-full max-w-7xl font-plusJktSans">
