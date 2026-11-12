@@ -64,7 +64,7 @@ export default function StoryTelling() {
     )
     .from(".first-text", {
       scale: 0.8,
-      y: isMobile ? 200 : 0,
+      y: isMobile ? 150 : 0,
       duration: 1.2,
       ease: "back.out(1.4)"
     })
@@ -310,7 +310,7 @@ export default function StoryTelling() {
           <div className="kalimantan-map absolute">
               <KalimantanMap/>
           </div>
-          <div className="absolute font-plusJktSans max-w-7xl flex min-h-screen justify-center items-center text-center">
+          <div className="absolute font-plusJktSans md:max-w-5xl max-w-7xl flex min-h-screen justify-center items-center text-center">
             <h1 className="first-text flex  flex-wrap justify-center items-center lg:text-6xl  text-2xl [word-spacing:2rem] font-bold">
               {firstText.map((word, i) => (
                 <span key={i} className="word max-md:mx-2 mx-6 lg:my-2">{word}</span>
