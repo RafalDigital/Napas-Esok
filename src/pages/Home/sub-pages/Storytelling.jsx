@@ -64,7 +64,7 @@ export default function StoryTelling() {
     )
     .from(".first-text", {
       scale: 0.8,
-      y: isMobile ? 100 : 0,
+      y: isMobile ? 200 : 0,
       duration: 1.2,
       ease: "back.out(1.4)"
     })
