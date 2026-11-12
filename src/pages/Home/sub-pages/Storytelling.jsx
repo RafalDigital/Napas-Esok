@@ -59,11 +59,12 @@ export default function StoryTelling() {
     .to({}, { duration: 0.2 })
     .fromTo(
       ".kalimantan-map",
-      { scale: isMobile ? 0.6 : 0.8, clipPath: "ellipse(0% 0% at 50% 50%)", opacity: 0 },
+      { scale: isMobile ? 0.6 : 0.8, clipPath: "ellipse(0% 0% at 50% 50%)", opacity: 0, y: isMobile ? -150 : 0 },
       { clipPath: "ellipse(75% 75% at 50% 50%)", opacity: 1, duration: 1.5 }
     )
     .from(".first-text", {
       scale: 0.8,
+      y: isMobile ? 100 : 0,
       duration: 1.2,
       ease: "back.out(1.4)"
     })
@@ -153,7 +154,7 @@ export default function StoryTelling() {
       },
     });
 
-    tl.to('.kalimantan-map', {scale: mapSection2Scale})
+    tl.to('.kalimantan-map', {scale: mapSection2Scale, y: 0})
       .fromTo(
         ".section2word",
         { opacity: 0, y: 15,},
@@ -310,7 +311,7 @@ export default function StoryTelling() {
               <KalimantanMap/>
           </div>
           <div className="absolute font-plusJktSans max-w-4xl flex min-h-screen justify-center items-center text-center">
-            <h1 className="first-text flex  flex-wrap justify-center items-center lg:text-[60px] sm:text-2xl text-xl [word-spacing:2rem] font-bold">
+            <h1 className="first-text flex  flex-wrap justify-center items-center lg:text-[60px]  text-2xl [word-spacing:2rem] font-bold">
               {firstText.map((word, i) => (
                 <span key={i} className="word mx-6">{word}</span>
               ))}
@@ -318,7 +319,7 @@ export default function StoryTelling() {
           </div>
 
         {/* Section 2 */}
-          <div className="text-section2 top-0 absolute flex flex-col md:justify-between mx-auto h-dvh w-full max-w-3xl pt-28 md:text-xl text-md font-bold font-plusJktSans">
+          <div className="text-section2 top-0 absolute flex flex-col md:justify-between mx-auto h-dvh w-full max-w-3xl pt-28 md:text-xl text-lg font-bold font-plusJktSans">
           <h1 className="section2-1 flex justify-start items-start">
             {section2Text1.map((word, i) => (
                 <span key={i} className="section2word mx-1">{word}</span>
@@ -333,7 +334,7 @@ export default function StoryTelling() {
 
                 
         {/* Section 3 */}        
-        <div className="text-section3 absolute flex flex-col h-dvh w-full max-w-3xl right-0 items-center justify-center gap-2 font-plusJktSans max-md:pt-40">
+        <div className="text-section3 absolute flex flex-col h-dvh w-full max-w-3xl right-0 items-center justify-center ap-2 font-plusJktSans max-md:pt-40">
           <div className="flex flex-col gap-2 md:items-end items-center">
             <div className="section3-item text-7xl font-bold text-red-500">
               <h1 className="">1,6</h1>
@@ -419,15 +420,15 @@ export default function StoryTelling() {
         </div>
 
         {/* Section 6 */}
-          <div className="text-section6 top-0 absolute flex flex-col gap-28 justify-center items-center mx-auto h-dvh w-full max-w-3xl pt-28">
+          <div className="text-section6 top-0 absolute flex flex-col gap-28 justify-center items-center mx-auto h-dvh w-full md:max-w-3xl pt-28">
               <h1 className="section6-1 flex flex-wrap justify-center md:text-4xl text-2xl font-bold font-plusJktSans">
                 {section3Text1.map((word, i) => (
                     <span key={i} className="section6word mx-4">{word}</span>
                   ))}
               </h1>
               <div className="qta-section flex max-md:flex-col gap-6 max-md:gap-4 max-md:items-center md:justify-center mx-auto h-fit w-full max-w-7xl font-plusJktSans">
-                <button className="qta-item flex gap-2 rounded-2xl h-fit cursor-pointer border border-red-400 bg-red-500 hover:bg-transparent px-4 py-3 min-w-56 md:max-w-56 w-60 justify-center transition-all">Lihat titik api hari ini <MoveRight/></button>
-                <button className="qta-item flex gap-2 rounded-2xl h-fit cursor-pointer border border-neutral-600 hover:border-neutral-700 px-4 py-3 min-w-56 md:max-w-56 w-60 justify-center transition-all">Pelajari masalahnya</button>
+                <button className="qta-item flex gap-2 rounded-2xl h-fit cursor-pointer border border-red-400 bg-red-500 hover:bg-transparent px-4 py-3 min-w-56 md:max-w-56 max-md:w-full justify-center transition-all">Lihat titik api hari ini <MoveRight/></button>
+                <button className="qta-item flex gap-2 rounded-2xl h-fit cursor-pointer border border-neutral-600 hover:border-neutral-700 px-4 py-3 min-w-56 md:max-w-56 max-md:w-full justify-center transition-all">Pelajari masalahnya</button>
               </div>
         </div>
 
