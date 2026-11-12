@@ -35,7 +35,7 @@ export default function Navbar() {
 
     return(
         <>
-            <nav ref={navRef} className="flex fixed w-full right-0 left-0 top-0 bg-background font-plusJktSans px-4 py-4 justify-between items-center z-50">
+            <nav ref={navRef} className="flex fixed w-full right-0 left-0 top-0 bg-background border-b border-neutral-800 font-plusJktSans px-4 py-4 justify-between items-center z-50">
                 <div className="md:pl-2 flex gap-2 justify-center items-center">
                     <img src={WhiteLogo} className="w-12"/>
                     <h1>Napas Esok</h1>

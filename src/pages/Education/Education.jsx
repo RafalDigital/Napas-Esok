@@ -110,7 +110,7 @@ export default function Education() {
                         </h1>
                     </header>
 
-                    <main className="flex-1 overflow-auto max-md:pt-40 pt-32 px-12">
+                    <main className="flex-1 overflow-auto max-md:pt-40 pt-32 px-6 md:px-12">
                         <header className="mb-12 border-b border-neutral-800 pb-12">
                             <span className="block text-xs w-fit px-3 py-1 font-plusJktSans font-bold border border-neutral-600 rounded-2xl mb-4">Edukasi</span>
                             <h1 className="text-6xl/18 md:max-w-lg font-plusJktSans font-bold mb-4">Kenali karhutla dari akarnya</h1>
