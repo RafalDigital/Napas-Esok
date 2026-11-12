@@ -16,10 +16,16 @@ export default function Navbar() {
     const navigate = useNavigate();
     const navRef = useRef(null)
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
 
     // Toggle Menu
     const toggleMenu = () => {
+        setIsLoading(true);
         setIsMenuOpen((p) => !p)
+    
+        setTimeout(() => {
+          setIsLoading(false);
+        }, 700);
     }
 
     const handleNavigate = (path) => {
@@ -41,7 +47,7 @@ export default function Navbar() {
                     <a onClick={() => navigate('/Faq')} className="px-3 py-1.5 bg-transparent hover:bg-neutral-800 rounded-lg cursor-pointer">FAQ</a>
                 </div>
 
-                <button onClick={toggleMenu} className="pr-2 h-fit cursor-pointer md:hidden">
+                <button onClick={toggleMenu} disabled={isLoading} className="pr-2 h-fit cursor-pointer md:hidden">
                     <div className="w-5 flex flex-col gap-1 justify-center items-center">
                         <span className="h-0.5 w-full bg-white rounded-full"></span>
                         <span className="h-0.5 w-full bg-white rounded-full"></span>

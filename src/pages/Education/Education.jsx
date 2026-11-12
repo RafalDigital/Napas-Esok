@@ -17,6 +17,16 @@ import { useGSAP } from "@gsap/react";
 export default function Education() {
     const [isMobileOpen, setIsMobileOpen] = useState(false);
     const [activatedMenu, setActivatedMenu] = useState("One");
+    const [isLoading, setIsLoading] = useState(false);
+
+    const Open = () => {
+    setIsLoading(true);
+    setIsMobileOpen((prev) => !prev)
+
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 700);
+  };
 
     const sideBarItems = [
         {label: "Apa itu karhutla", page: "One"},
@@ -58,7 +68,7 @@ export default function Education() {
                 <MobileSideBar isMobileOpen={isMobileOpen} sideBarItems={sideBarItems} activatedMenu={activatedMenu} setActivatedMenu={setActivatedMenu} setIsMobileOpen={setIsMobileOpen}/>
                     {/* Header mobile only */}
                     <header className="md:hidden w-full fixed top-20 left-0 z-30 bg-background border-b border-t border-neutral-800 py-4 px-6 flex gap-6 items-center">
-                        <button onClick={() => {setIsMobileOpen((prev) => !prev)}}>
+                        <button disabled={isLoading} onClick={Open}>
                             <div className="w-5 flex flex-col gap-1 justify-center items-start cursor-pointer">
                                 <span className="h-0.5 w-full bg-white rounded-full"></span>
                                 <span className="h-0.5 w-3/4 bg-white rounded-full"></span>
