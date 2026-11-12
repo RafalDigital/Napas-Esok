@@ -9,7 +9,7 @@ function App() {
   return (
     <>
       <Router>
-        <div className="min-h-[100dvh] bg-background text-white overflow-x-hidden">
+        <div className="min-h-[100dvh] bg-background text-white overflow-x-clip">
           <Routes>
             <Route path="/" element={<Home/>}/>
             <Route path="/Edukasi" element={<Education/>}/>
