@@ -28,10 +28,10 @@ export default function StartHere() {
 
     return(
         <>
-            <div ref={shRef} className="w-full mx-auto max-w-7xl flex flex-col gap-4 px-[5.2rem] pb-10">
+            <div ref={shRef} className="w-full mx-auto max-w-7xl flex flex-col gap-4 md:px-[5.2rem] px-4 pb-10">
                 <div>
-                    <span className="sh-items font-inter text-md font-bold text-red-300">Mulai Dari Sini</span>
-                    <h1 className="sh-items font-plusJktSans text-[40px] font-bold mt-2">Tiga langkah nyata, hari ini.</h1>
+                    <span className="sh-items block max-md:text-center font-inter text-md font-bold text-red-300">Mulai Dari Sini</span>
+                    <h1 className="sh-items max-md:text-center font-plusJktSans text-[40px] font-bold mt-2">Tiga langkah nyata, hari ini.</h1>
                 </div>
                 <div className="grid md:grid-cols-3 max-md:grid-rows-3 gap-6 py-2 mt-6">
                     {/* Content 1 */}

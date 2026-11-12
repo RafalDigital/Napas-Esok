@@ -35,10 +35,10 @@ export default function Features() {
 
     return(
         <>
-            <div ref={featuresRef} className="w-full mx-auto max-w-7xl flex flex-col gap-4 px-[5.2rem] pb-10">
+            <div ref={featuresRef} className="w-full mx-auto max-w-7xl flex flex-col gap-4 md:px-[5.2rem] px-4 pb-10">
                 <div className="mb-6">
-                    <h1 className="feature-items font-plusJktSans text-[40px] font-bold mt-2">Solusi Menyeluruh untuk Lingkungan Kita</h1>
-                    <span className="feature-items font-plusJktSans text-lg font-medium text-neutral-400">Dari melihat, memahami, sampai bertindak, semuanya dalam satu tempat.</span>
+                    <h1 className="feature-items max-md:text-center font-plusJktSans text-[40px] font-bold mt-2">Solusi Menyeluruh untuk Lingkungan Kita</h1>
+                    <span className="feature-items max-md:text-center block font-plusJktSans text-lg font-medium text-neutral-400">Dari melihat, memahami, sampai bertindak, semuanya dalam satu tempat.</span>
                 </div>
                 <div className="grid md:grid-cols-2 max-md:grid-rows-2 gap-8 items-center">
 
