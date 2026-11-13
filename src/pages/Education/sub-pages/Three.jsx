@@ -32,9 +32,9 @@ export default function Three() {
                     ))}
                 </div>
 
-                <main>
+                {/* <main> */}
                     {renderCategory[impactCategory]}
-                </main>
+                {/* </main> */}
             </div>
         </>
     )
@@ -73,7 +73,7 @@ const HealthSection = () => {
                 </div>
 
                 {/* Card 2 */}
-                <div className="p-6 bg-neutral-800/60 border border-neutral-700 rounded-lg h-fit">
+                <div className="p-6 bg-neutral-800/60 border border-neutral-700 rounded-lg">
                     <span className="bg-red-500/20 rounded-2xl py-1 px-3 font-bold text-xs text-red-200 font-plusJktSans w-fit mb-4">Kasus ISPA kumulatif, 63 - 68 kabupaten/kota</span>
                     <h1 className="font-plusJktSans font-bold text-5xl my-2 text-red-500">401.586</h1>
                     <p className="font-inter text-md/7 font-light text-neutral-400 max-w-3xl mb-4">Karhutla berdampak pada sekitar 10,67 juta penduduk di tujuh provinsi.</p>
@@ -132,7 +132,7 @@ const EconomySection = () => {
     return(
         <>
             <div className="grid md:grid-cols-2 max-md:grid-rows-2 gap-4">
-                <div className="p-6 bg-neutral-800/60 border border-neutral-700 rounded-lg h-fit">
+                <div className="p-6 bg-neutral-800/60 border border-neutral-700 rounded-lg">
                     <span className="bg-red-500/20 rounded-2xl py-1 px-3 font-bold text-xs text-red-200 font-plusJktSans w-fit mb-4">Kerugian karhutla 2015 (catatan Bank Dunia)</span>
                     <h1 className="font-plusJktSans font-bold text-5xl my-2 text-red-500">Rp221 T</h1>
                     <p className="font-inter text-md/7 font-light text-neutral-400 max-w-3xl mb-4">Dari sekitar 2,6 juta hektare lahan yang terbakar, setara 4,5 kali luas Pulau Bali.</p>
