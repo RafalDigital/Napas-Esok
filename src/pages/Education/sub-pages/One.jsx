@@ -14,9 +14,9 @@ export default function One() {
                 <h1 className="font-plusJktSans font-bold text-4xl mb-3">Apa itu karhutla?</h1>
                 <p className="font-inter text-lg/8 font-light text-neutral-400 max-w-3xl">Karhutla adalah singkatan dari <span className="font-bold text-neutral-200">kebakaran hutan dan lahan</span>. Yaitu, terbakarnya hutan, kebun, dan lahan terbuka secara tidak terkendali. Di Indonesia, yang paling sulit ditangani adalah kebakaran di lahan <span className="font-bold text-neutral-200">gambut</span>. Gambut adalah tanah berlapis sisa tumbuhan yang tertimbun ribuan tahun.</p>
 
-                <div className="p-1 bg-neutral-800 rounded-xl w-fit my-4">
-                    <button onClick={() => setIsSurface(true)} className={`px-4 py-2 text-sm font-semibold font-plusJktSans hover:text-neutral-200 rounded-lg border ${isSurface ? 'border-neutral-700 bg-neutral-950 text-neutral-200' : 'bg-neutral-800 border-neutral-50/0 text-neutral-500'}  cursor-pointer`}>Di Permukaan</button>
-                    <button onClick={() => setIsSurface(false)} className={`px-4 py-2 text-sm font-semibold font-plusJktSans hover:text-neutral-200 rounded-lg border ${isSurface ? 'bg-neutral-800 border-neutral-50/0 text-neutral-500' : 'border-neutral-700 bg-neutral-950 text-neutral-200'}  cursor-pointer`}>Di Bawah Permukaan</button>
+                <div className="flex self-center p-1 bg-neutral-800 rounded-xl md:w-fit my-4">
+                    <button onClick={() => setIsSurface(true)} className={`px-4 py-2 max-md:w-full text-sm font-semibold font-plusJktSans hover:text-neutral-200 rounded-lg border ${isSurface ? 'border-neutral-700 bg-neutral-950 text-neutral-200' : 'bg-neutral-800 border-neutral-50/0 text-neutral-500'}  cursor-pointer`}>Di Permukaan</button>
+                    <button onClick={() => setIsSurface(false)} className={`px-4 py-2 max-md:w-full text-sm font-semibold font-plusJktSans hover:text-neutral-200 rounded-lg border ${isSurface ? 'bg-neutral-800 border-neutral-50/0 text-neutral-500' : 'border-neutral-700 bg-neutral-950 text-neutral-200'}  cursor-pointer`}>Di Bawah Permukaan</button>
                 </div>
 
                 <div className="grid md:grid-cols-2 max-md:grid-rows-2 gap-4">

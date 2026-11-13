@@ -37,7 +37,7 @@ export default function Two() {
     return(
         <>
             <div className="w-full max-w-7xl mx-auto">
-                 <span className="font-inter block font-semibold text-xs text-red-300 tracking-widest mb-2">02 · Penyebab</span>
+                 <span className="font-inter block font-semibold text-xs text-red-300 tracking-widest mb-2">02 · PENYEBAB</span>
                  <h1 className="font-plusJktSans font-bold text-4xl mb-3 max-w-md">Mengapa karhutla terus berulang di Indonesia?</h1>
                  <p className="font-inter text-lg/8 font-light text-neutral-400 max-w-3xl">Api tidak muncul sendiri. Ada pemicu yang menyalakan, dan ada kondisi yang membuat api mudah menjalar. Klik tiap langkah untuk melihat rantainya.</p>
 

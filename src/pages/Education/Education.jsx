@@ -35,10 +35,10 @@ export default function Education() {
     const sideBarItems = [
         {label: "Apa itu karhutla", page: "One"},
         {label: "Penyebab", page: "Two"},
-        {label: "Gambut", page: "Three"},
-        {label: "Dampak", page: "Four"},
-        {label: "Linimasa", page: "Five"},
-        {label: "Mitos dan fakta", page: "Six"},
+        {label: "Dampak", page: "Three"},
+        {label: "Cara menangani", page: "Four"},
+        {label: "Peran kita", page: "Five"},
+        {label: "Persiapan", page: "Six"},
         {label: "Kuis", page: "Seven"},
         {label: "Reverensi", page: "Eight"},
     ]
