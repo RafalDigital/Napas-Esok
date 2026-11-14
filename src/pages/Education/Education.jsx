@@ -8,7 +8,6 @@ import Four from "./sub-pages/Four";
 import Five from "./sub-pages/Five";
 import Six from "./sub-pages/Six";
 import Seven from "./sub-pages/Seven";
-import Eight from "./sub-pages/Eight";
 import { useRef } from "react";
 import { useEffect } from "react";
 import gsap from "gsap";
@@ -38,9 +37,8 @@ export default function Education() {
         {label: "Dampak", page: "Three"},
         {label: "Cara menangani", page: "Four"},
         {label: "Peran kita", page: "Five"},
-        {label: "Persiapan", page: "Six"},
-        {label: "Kuis", page: "Seven"},
-        {label: "Reverensi", page: "Eight"},
+        {label: "Kuis", page: "Six"},
+        {label: "Reverensi", page: "Seven"},
     ]
 
     const goTo = (page) => {
@@ -123,7 +121,6 @@ export default function Education() {
                         <section id="Five" className="scroll-mt-28 max-md:scroll-mt-44 pb-24"><Five/></section>
                         <section id="Six" className="scroll-mt-28 max-md:scroll-mt-44 pb-24"><Six/></section>
                         <section id="Seven" className="scroll-mt-28 max-md:scroll-mt-44 pb-24"><Seven/></section>
-                        <section id="Eight" className="scroll-mt-28 max-md:scroll-mt-44 pb-24"><Eight/></section>
                     </main>
             </div>
             <Footer/>

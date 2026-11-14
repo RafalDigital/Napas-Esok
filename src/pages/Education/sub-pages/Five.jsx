@@ -3,12 +3,20 @@ import { useState } from "react";
 
 export default function Five() {
 
-    const accordionData = [
-        {title: '"Masker kain biasa sudah cukup."', content: 'Partikel asap sangat halus, sehingga masker kain biasa umumnya kurang menyaring. Masker yang lebih rapat dan berstandar penyaring partikel (seperti N95 atau KN95) lebih disarankan, dan harus terpasang menutup hidung serta mulut tanpa celah.'},
-        {title: '"Tidak ada api terlihat, berarti sudah padam."', content: 'Api di lahan gambut bisa membara di dalam tanah tanpa nyala yang terlihat, lalu muncul lagi di permukaan. Asap tipis di atas tanah adalah tanda yang perlu dilaporkan.'},
-        {title: '"Asap hanya berbahaya bagi yang dekat dengan api."', content: 'Asap terbawa angin sampai jauh. Partikel halusnya (PM2,5) dapat masuk hingga paru-paru, jadi warga yang jauh dari lokasi api pun bisa terdampak.'},
-        {title: '"Kalau tidak sesak, tidak perlu waspada."', content: 'Paparan asap dapat memicu atau memperburuk gejala secara bertahap. Pantau diri dan keluarga, terutama kelompok rentan, dan cari pertolongan segera jika muncul sesak atau kondisi memburuk.'},
-    ]
+  const numberData = [
+    {number : 112, name: "Panggilan darurat", desc: "Satu nomor untuk kebakaran, bencana, kecelakaan, dan gangguan keamanan"},
+    {number : 113, name: "Pemadam kebakaran", desc: "Atau 1131"},
+    {number : 117, name: "BNPB", desc: "Penanggulangan Bencana"},
+    {number : 118, name: "Ambulans dan layanan kesehatan", desc: "Atau 119"},
+    {number : 115, name: "Basarnas", desc: "Pencarian dan pertolongan"},
+  ]
+
+  const accordionData = [
+      {title: '"Masker kain biasa sudah cukup."', content: 'Partikel asap sangat halus, sehingga masker kain biasa umumnya kurang menyaring. Masker yang lebih rapat dan berstandar penyaring partikel (seperti N95 atau KN95) lebih disarankan, dan harus terpasang menutup hidung serta mulut tanpa celah.'},
+      {title: '"Tidak ada api terlihat, berarti sudah padam."', content: 'Api di lahan gambut bisa membara di dalam tanah tanpa nyala yang terlihat, lalu muncul lagi di permukaan. Asap tipis di atas tanah adalah tanda yang perlu dilaporkan.'},
+      {title: '"Asap hanya berbahaya bagi yang dekat dengan api."', content: 'Asap terbawa angin sampai jauh. Partikel halusnya (PM2,5) dapat masuk hingga paru-paru, jadi warga yang jauh dari lokasi api pun bisa terdampak.'},
+      {title: '"Kalau tidak sesak, tidak perlu waspada."', content: 'Paparan asap dapat memicu atau memperburuk gejala secara bertahap. Pantau diri dan keluarga, terutama kelompok rentan, dan cari pertolongan segera jika muncul sesak atau kondisi memburuk.'},
+  ]
 
     return(
         <>
@@ -80,9 +88,26 @@ export default function Five() {
                     </div>
                 </div>
 
+                <div className="p-6 bg-neutral-800/60 border border-neutral-700 rounded-lg mt-4">
+                  <span className="bg-green-500/10 rounded-2xl py-1.5 px-3 font-bold text-xs text-green-300 font-plusJktSans w-fit mb-4">Simpan sekarang</span>
+                  <h1 className="font-plusJktSans font-bold text-2xl mt-2 mb-2">Nomor penting saat darurat</h1>
+                  <p className="font-inter text-md/7 font-light text-neutral-400 max-w-3xl mb-4">Ketuk nomor untuk menelepon dari ponsel. Ini nomor nasional.</p>
+                  <div className="grid md:grid-cols-3 max-md:grid-cols-1 gap-4">
+                    {numberData.map((item, index) => (
+                      <div key={index} className="p-4 bg-neutral-700/20 border border-neutral-700 rounded-lg mt-4 hover:border-neutral-500 transition-all cursor-pointer">
+                        <h1 className="font-plusJktSans text-red-500 font-black text-4xl mb-2">{item.number}</h1>
+                        <h1 className="font-inter font-bold text-md">{item.name}</h1>
+                        <p className="font-inter text-sm/6 font-light text-neutral-400 max-w-3xl">{item.desc}</p>
+                      </div>
+                    ))}
+
+                  </div>
+                </div>
+
+
                 <ScenarioQuiz/>
 
-                <div className="py-8">
+                <div className="pt-8">
                     <h1 className="font-plusJktSans font-bold text-2xl pb-3 border-b border-neutral-700">Kesalahan yang sering terjadi</h1>
                     {accordionData.map((item, index) => (
                         <AccordionCard key={index} title={item.title} content={item.content}/>
@@ -248,10 +273,7 @@ function ScenarioQuiz() {
         </span>
 
         <div className="w-full h-2 bg-neutral-700 rounded-full my-4 overflow-hidden">
-          <div
-            className="h-full bg-red-500 rounded-full transition-all duration-300"
-            style={{ width: `${progressBar}%` }}
-          />
+          <div className="h-full bg-red-500 rounded-full transition-all duration-300" style={{ width: `${progressBar}%` }}/>
         </div>
 
         <span className="block font-semibold text-sm text-red-300 font-inter w-fit mb-2">
@@ -279,14 +301,7 @@ function ScenarioQuiz() {
             }
 
             return (
-              <button
-                key={idx}
-                disabled={isAnswered}
-                onClick={() => handleSelectOption(idx)}
-                className={`flex items-center text-left gap-3 p-3 border rounded-xl transition-all ${
-                  isAnswered ? "cursor-default" : "cursor-pointer"
-                } ${buttonStyle}`}
-              >
+              <button key={idx} disabled={isAnswered} onClick={() => handleSelectOption(idx)} className={`flex items-center text-left gap-3 p-3 border rounded-xl transition-all ${isAnswered ? "cursor-default" : "cursor-pointer"} ${buttonStyle}`}>
                 <div className={`w-5 h-5 shrink-0 rounded-full border transition-colors ${radioStyle}`} />
                 <span className="font-inter text-sm">{option.text}</span>
               </button>
@@ -302,10 +317,7 @@ function ScenarioQuiz() {
               </span>{" "}
               karena {selectedOption.explanation}
             </p>
-            <button
-              onClick={handleNext}
-              className="px-5 py-2.5 self-end cursor-pointer border border-red-400 bg-[#EF4444] font-inter font-medium text-sm rounded-lg hover:bg-[#EF4444]/80 transition-all"
-            >
+            <button onClick={handleNext} className="px-5 py-2.5 self-end cursor-pointer border border-red-400 bg-[#EF4444] font-inter font-medium text-sm rounded-lg hover:bg-[#EF4444]/80 transition-all">
               {currentIndex === scenarioData.length - 1 ? "Selesai" : "Lanjut"}
             </button>
           </div>

@@ -43,7 +43,7 @@ export default function Navbar() {
                 <div className="flex gap-8 font-inter text-sm pr-6 max-md:hidden">
                     <a onClick={() => navigate('/')} className="px-3 py-1.5 bg-transparent hover:bg-neutral-800 rounded-lg cursor-pointer">Beranda</a>
                     <a onClick={() => navigate('/Edukasi')} className="px-3 py-1.5 bg-transparent hover:bg-neutral-800 rounded-lg cursor-pointer">Edukasi</a>
-                    <a onClick={() => navigate('/Fitur')} className="px-3 py-1.5 bg-transparent hover:bg-neutral-800 rounded-lg cursor-pointer">Fitur</a>
+                    <a onClick={() => navigate('/Pantau')} className="px-3 py-1.5 bg-transparent hover:bg-neutral-800 rounded-lg cursor-pointer">Pantau</a>
                     <a onClick={() => navigate('/Faq')} className="px-3 py-1.5 bg-transparent hover:bg-neutral-800 rounded-lg cursor-pointer">FAQ</a>
                 </div>
 

@@ -2,7 +2,8 @@ import { Wind } from "lucide-react";
 import { SunSnow } from "lucide-react";
 import { Flame } from "lucide-react";
 import { useState } from "react"
-
+import GambutPermukaan from "../../../assets/vectors/GambutPermukaan";
+import GambutDalam from "../../../assets/vectors/GambutDalam";
 
 export default function One() {
     const [isSurface, setIsSurface] = useState(true);
@@ -20,7 +21,9 @@ export default function One() {
                 </div>
 
                 <div className="grid md:grid-cols-2 max-md:grid-rows-2 gap-4">
-                    <div className="bg-neutral-800/60 border border-neutral-700 rounded-lg"></div>
+                    <div className="bg-neutral-800/60 border border-neutral-700 rounded-lg flex items-end">
+                        {isSurface ? (<GambutPermukaan/>) : (<GambutDalam/>)}
+                    </div>
                     <div className="p-6 bg-neutral-800/60 border border-neutral-700 rounded-lg">
                         <span className="bg-red-500/20 rounded-2xl py-1 px-3 font-bold text-xs text-red-200 font-plusJktSans w-fit mb-4">{isSurface ? "Di permukaan" : "Di bawah permukaan"}</span>
                         <h1 className="font-plusJktSans font-bold text-2xl my-2 max-w-60">{isSurface ? "Membakar daun, semak, dan ranting" : "Membara di dalam lapisan gambut"}</h1>
