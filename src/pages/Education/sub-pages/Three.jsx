@@ -131,23 +131,45 @@ const HealthSection = () => {
 const EconomySection = () => {
     return(
         <>
-            <div className="grid md:grid-cols-2 max-md:grid-rows-2 gap-4">
+            <div className="grid md:grid-cols-3 max-md:grid-rows-3 gap-4">
+                
+
                 <div className="p-6 bg-neutral-800/60 border border-neutral-700 rounded-lg">
-                    <span className="bg-red-500/20 rounded-2xl py-1 px-3 font-bold text-xs text-red-200 font-plusJktSans w-fit mb-4">Kerugian karhutla 2015 (catatan Bank Dunia)</span>
-                    <h1 className="font-plusJktSans font-bold text-5xl my-2 text-red-500">Rp221 T</h1>
-                    <p className="font-inter text-md/7 font-light text-neutral-400 max-w-3xl mb-4">Dari sekitar 2,6 juta hektare lahan yang terbakar, setara 4,5 kali luas Pulau Bali.</p>
-                    <p className="font-inter text-xs font-light text-neutral-500 max-w-3xl">Sumber: Katadata, mengutip Bank Dunia (2015).</p>
+                    <span className="bg-red-500/20 rounded-2xl py-1.5 px-3 font-bold text-xs text-red-200 font-plusJktSans w-fit mb-4">Warga dan keluarga</span>
+                    <h1 className="font-plusJktSans font-bold text-2xl my-2">Uang keluar, penghasilan berkurang</h1>
+                    <ul className="list-disc pl-5 mt-4 space-y-2 font-inter text-md/7 font-light text-neutral-200 marker:text-red-500">
+                        <li>Biaya berobat dan membeli masker bertambah.</li>
+                        <li>Pekerja luar ruang dan pekerja harian sulit bekerja saat asap tebal.</li>
+                        <li>Orang tua harus menyesuaikan pekerjaan saat sekolah anak libur.</li>
+                    </ul>
+                    <p className="p-3 bg-neutral-800 text-xs/4 text-neutral-400 max-w-3xl mt-2 rounded-lg border border-neutral-700/60">Contoh nyata: di Kota Jambi, kasus ISPA naik sekitar 15% menjadi 1.955 kasus dan penjualan masker ikut naik. Pada 2019, lebih dari 900 ribu orang di Indonesia mengalami gangguan pernapasan. 
+                    <span className="mt-2 block">CNA Indonesia (25 Agu 2026); Mongabay Indonesia (16 Des 2019), mengutip Bank Dunia.</span></p>
                 </div>
 
                 <div className="p-6 bg-neutral-800/60 border border-neutral-700 rounded-lg">
-                    <h1 className="font-plusJktSans font-bold text-2xl mb-2">Dari mana kerugian itu datang?</h1>
-                    <ul className="list-disc pl-5 space-y-2 font-inter text-md/7 font-medium text-neutral-200 marker:text-red-500">
-                        <li>Biaya pengobatan dan hilangnya hari kerja</li>
-                        <li>Gangguan transportasi dan pariwisata</li>
-                        <li>Kerusakan kebun, hutan, dan hasil lahan</li>
-                        <li>Biaya pemadaman dan pemulihan</li>
+                    <span className="bg-red-500/20 rounded-2xl py-1.5 px-3 font-bold text-xs text-red-200 font-plusJktSans w-fit mb-4">Pelaku usaha</span>
+                    <h1 className="font-plusJktSans font-bold text-2xl my-2">Produksi dan perjalanan terhenti</h1>
+                    <ul className="list-disc pl-5 mt-4 space-y-2 font-inter text-md/7 font-light text-neutral-200 marker:text-red-500">
+                        <li>Kebun, hutan tanaman, dan lahan yang terbakar berhenti berproduksi.</li>
+                        <li>Penerbangan batal sehingga maskapai dan penumpang sama-sama rugi.</li>
+                        <li>Usaha yang bergantung pada pengunjung, seperti warung dan wisata, sepi saat orang menghindari luar rumah.</li>
                     </ul>
+                    <p className="p-3 bg-neutral-800 text-xs/4 text-neutral-400 max-w-3xl mt-2 rounded-lg border border-neutral-700/60">Contoh nyata: Agustus 2026, penumpang penerbangan Jakarta-Singkawang yang batal mendapat pengembalian dana penuh atau ganti jadwal gratis. Pada 2019, 12 bandara nasional berhenti beroperasi.
+                    <span className="mt-2 block">CNBC Indonesia (21 Agu 2026); Mongabay Indonesia (16 Des 2019).</span></p>
                 </div>
+
+                <div className="p-6 bg-neutral-800/60 border border-neutral-700 rounded-lg">
+                    <span className="bg-red-500/20 rounded-2xl py-1.5 px-3 font-bold text-xs text-red-200 font-plusJktSans w-fit mb-4">Negara</span>
+                    <h1 className="font-plusJktSans font-bold text-2xl my-2">Biaya penanganan dan pertumbuhan</h1>
+                    <ul className="list-disc pl-5 mt-4 space-y-2 font-inter text-md/7 font-light text-neutral-200 marker:text-red-500">
+                        <li>Pemadaman api dan pemulihan lahan membutuhkan dana besar.</li>
+                        <li>Layanan kesehatan menanggung lonjakan pasien.</li>
+                        <li>Ekonomi tumbuh lebih lambat karena kegiatan usaha terganggu.</li>
+                    </ul>
+                    <p className="p-3 bg-neutral-800 text-xs/4 text-neutral-400 max-w-3xl mt-2 rounded-lg border border-neutral-700/60">Contoh nyata: karhutla 2019 menekan pertumbuhan ekonomi sebesar 0,09% (2019) dan 0,05% (2020).
+                    <span className="mt-2 block">Mongabay Indonesia (16 Des 2019), mengutip Bank Dunia.</span></p>
+                </div>
+
             </div>
         </>
     )
@@ -158,14 +180,19 @@ const ClimeSection = () => {
         <>
             <div className="grid md:grid-cols-2 max-md:grid-rows-2 gap-4">
                 <div className="p-6 bg-neutral-800/60 border border-neutral-700 rounded-lg">
-                    <h1 className="font-plusJktSans font-bold text-2xl mb-2">Karbon yang dilepas</h1>
-                    <p className="font-inter text-md/7 font-light text-neutral-400 max-w-3xl">Gambut menyimpan karbon dalam jumlah besar. Saat terbakar, karbon itu terlepas ke udara dan ikut memperbesar emisi gas rumah kaca.</p>
+                    <h1 className="font-plusJktSans font-bold text-2xl mb-2">Iklim memanas</h1>
+                    <p className="font-inter text-md/7 font-light text-neutral-400 max-w-3xl">Gambut menyimpan karbon dalam jumlah sangat besar, menumpuk selama ribuan tahun. Saat terbakar, karbon itu terlepas ke udara dan menambah gas rumah kaca penyebab pemanasan global.</p>
                 </div>
                 <div className="p-6 bg-neutral-800/60 border border-neutral-700 rounded-lg">
-                    <h1 className="font-plusJktSans font-bold text-2xl mb-2">Habitat yang hilang</h1>
-                    <p className="font-inter text-md/7 font-light text-neutral-400 max-w-3xl">Hutan dan lahan gambut adalah rumah bagi banyak satwa dan tumbuhan. Setelah terbakar, pemulihannya membutuhkan waktu panjang.</p>
+                    <h1 className="font-plusJktSans font-bold text-2xl mb-2">Habitat satwa hilang</h1>
+                    <p className="font-inter text-md/7 font-light text-neutral-400 max-w-3xl">Hutan dan lahan gambut adalah rumah bagi banyak satwa dan tumbuhan. Saat terbakar, habitat itu rusak, dan pemulihannya membutuhkan waktu panjang..</p>
                 </div>
             </div>
+                <div className="p-6 bg-neutral-800/60 border border-neutral-700 rounded-lg mt-4">
+                    <h1 className="font-plusJktSans font-bold text-2xl mb-2">Jadi urusan antarnegara</h1>
+                    <p className="font-inter text-md/7 font-light text-neutral-400 max-w-3xl">Asap sampai ke negara tetangga, sehingga karhutla tidak hanya urusan dalam negeri. Karena itu negara-negara ASEAN menyepakati perjanjian asap lintas batas pada 2002. Indonesia menyetujuinya pada 16 September 2014 dan menyerahkan ratifikasinya pada 20 Januari 2015.</p>
+                    <p className="p-3 bg-neutral-800 text-xs/4 text-neutral-400 max-w-3xl mt-2 rounded-lg border border-neutral-700/60">Studi gabungan Universitas Harvard dan Universitas Columbia memperkirakan bahwa kabut asap akibat kebakaran hutan dan lahan di Asia Tenggara pada tahun 2015 menyebabkan rata-rata 100.300 kematian dini. Angka tersebut mencakup 91.600 kematian dini di Indonesia, 6.500 di Malaysia, dan 2.200 di Singapura berdasarkan pemodelan statistik paparan PM2.5.</p>
+                </div>
         </>
     )
 }
@@ -176,16 +203,25 @@ const DailySection = () => {
             <div className="grid md:grid-cols-3 max-md:grid-rows-3 gap-4">
                 <div className="p-6 bg-neutral-800/60 border border-neutral-700 rounded-lg">
                     <h1 className="font-plusJktSans font-bold text-2xl mb-2">Sekolah</h1>
-                    <p className="font-inter text-md/7 font-light text-neutral-400 max-w-3xl">Kegiatan belajar di luar ruangan dibatasi, dan pada kondisi tertentu sekolah diliburkan.</p>
+                    <p className="font-inter text-md/7 font-light text-neutral-400 max-w-3xl">Anak-anak termasuk kelompok yang paling rentan terhadap asap. Kegiatan di luar ruangan dibatasi dan, pada kondisi tertentu, sekolah diliburkan lalu belajar dialihkan ke rumah.n</p>
+                    <p className="p-3 bg-neutral-800 text-xs/4 text-neutral-400 max-w-3xl mt-2 rounded-lg border border-neutral-700/60">Agustus 2026, Gubernur Jambi meliburkan sekolah dari PAUD sampai SMA karena kabut asap makin pekat. <span className="mt-2 block">CNA Indonesia, 25 Agu 2026.</span></p>
                 </div>
                 <div className="p-6 bg-neutral-800/60 border border-neutral-700 rounded-lg">
                     <h1 className="font-plusJktSans font-bold text-2xl mb-2">Perjalanan</h1>
-                    <p className="font-inter text-md/7 font-light text-neutral-400 max-w-3xl">Jarak pandang menurun sehingga penerbangan dan transportasi darat dapat terganggu.</p>
+                    <p className="font-inter text-md/7 font-light text-neutral-400 max-w-3xl">Asap menurunkan jarak pandang. Pesawat sulit mendarat dan lepas landas dengan aman, dan pengemudi di jalan raya ikut terganggu.</p>
+                    <p className="p-3 bg-neutral-800 text-xs/4 text-neutral-400 max-w-3xl mt-2 rounded-lg border border-neutral-700/60">16-19 Agustus 2026, jarak pandang di Singkawang tercatat sekitar 2-3 km dan sejumlah penerbangan Jakarta-Singkawang dibatalkan. 
+                    <span className="mt-2 block">CNBC Indonesia (21 Agu 2026), Katadata (20 Agu 2026).</span>
+                    </p>
                 </div>
                 <div className="p-6 bg-neutral-800/60 border border-neutral-700 rounded-lg">
-                    <h1 className="font-plusJktSans font-bold text-2xl mb-2">Pekerjaan</h1>
-                    <p className="font-inter text-md/7 font-light text-neutral-400 max-w-3xl">Pekerja luar ruang terpapar lebih lama dan butuh perlindungan serta pengaturan kerja.</p>
+                    <h1 className="font-plusJktSans font-bold text-2xl mb-2">Aktivitas luar ruangan</h1>
+                    <p className="font-inter text-md/7 font-light text-neutral-400 max-w-3xl">Warga diminta mengurangi aktivitas di luar ruangan, mulai memakai masker, dan berobat saat muncul batuk atau sesak.</p>
+                    <p className="p-3 bg-neutral-800 text-xs/4 text-neutral-400 max-w-3xl mt-2 rounded-lg border border-neutral-700/60">Contoh nyata: di Kota Jambi kasus ISPA naik sekitar 15% menjadi 1.955 kasus, dan penjualan masker ikut naik, terutama masker anak-anak. <span className="mt-2 block">CNA Indonesia, 25 Agu 2026.</span></p>
                 </div>
+            </div>
+            <div className="p-6 bg-neutral-800/60 border border-neutral-700 rounded-lg mt-4">
+                <h1 className="font-plusJktSans font-bold text-2xl mb-2">Dampak yang tidak terlihat dari libur sekolah</h1>
+                <p className="font-inter text-md/7 font-light text-neutral-400 max-w-3xl">Libur karena asap bukan sekadar istirahat. Saat Jambi dan Palangka Raya menutup sekolah pada Oktober 2023 (PM2,5 di Palangka Raya tercatat di atas 350 µg/m³ pada 5 Oktober), Mongabay mencatat belajar dari rumah berisiko memperlebar kesenjangan belajar, terutama bagi siswa tanpa internet yang andal dan anak berkebutuhan khusus.</p>
             </div>
         </>
     )
