@@ -22,7 +22,6 @@ function SipongiMap() {
     <div className="relative w-full aspect-video overflow-hidden">
       <iframe
         src="https://sipongi.gakkum.kehutanan.go.id/peta"
-        title="Peta Titik Panas SIPONGI"
         className="absolute inset-0 size-full border-0"
         allowFullScreen
         loading="lazy"

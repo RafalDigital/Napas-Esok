@@ -103,7 +103,7 @@ function MenuBar({ isOpen, onClose, onNavigate }) {
             <div ref={menuRef} className="relative top-18 w-full bg-background border-b border-neutral-800 p-6 shadow-xl flex flex-col gap-3 font-inter text-neutral-200">
                 <button onClick={() => onNavigate('/')} className="text-left item w-full px-4 py-3 hover:bg-neutral-800/60 rounded-xl transition-all font-medium text-base">Beranda</button>
                 <button onClick={() => onNavigate('/Edukasi')} className="text-left item w-full px-4 py-3 hover:bg-neutral-800/60 rounded-xl transition-all font-medium text-base">Edukasi</button>
-                <button onClick={() => onNavigate('/Fitur')} className="text-left item w-full px-4 py-3 hover:bg-neutral-800/60 rounded-xl transition-all font-medium text-base">Fitur</button>
+                <button onClick={() => onNavigate('/Pantau')} className="text-left item w-full px-4 py-3 hover:bg-neutral-800/60 rounded-xl transition-all font-medium text-base">Pantau</button>
                 <button onClick={() => onNavigate('/Faq')} className="text-left item w-full px-4 py-3 hover:bg-neutral-800/60 rounded-xl transition-all font-medium text-base">FAQ</button>
             </div>
         </div>
