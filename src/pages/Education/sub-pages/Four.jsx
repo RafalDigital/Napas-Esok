@@ -118,7 +118,7 @@ export default function Four() {
                 <h1 className="font-plusJktSans font-bold text-4xl mb-3">Bagaimana karhutla ditangani?</h1>
                 <p className="font-inter text-lg/8 font-light text-neutral-400 max-w-3xl">Penanganan efektif bukan hanya memadamkan api. Ada tiga tahap: mencegah, memadamkan, dan memulihkan.</p>
 
-                <div className="flex self-center p-1 bg-neutral-800 rounded-xl md:w-fit my-4">
+                <div className="flex self-center p-1 bg-neutral-800 rounded-xl md:w-fit my-4 overflow-x-auto no-scrollbar">
                 {steps.map((item) => {
                     const isActive = handlingStep === item.label
 
