@@ -94,7 +94,7 @@ export default function Education() {
                 <DesktopSideBar sideBarItems={sideBarItems} activatedMenu={activatedMenu} goTo={goTo}/>
                 <MobileSideBar isMobileOpen={isMobileOpen} sideBarItems={sideBarItems} activatedMenu={activatedMenu} goTo={goTo} setIsMobileOpen={setIsMobileOpen}/>
                     {/* Header mobile only */}
-                    <header className="md:hidden w-full fixed top-20 left-0 z-30 bg-background border-b border-t border-neutral-800 py-4 px-6 flex gap-6 items-center">
+                    <header className="lg:hidden w-full fixed top-20 left-0 z-30 bg-background border-b border-t border-neutral-800 py-4 px-6 flex gap-6 items-center">
                         <button disabled={isLoading} onClick={Open}>
                             <div className="w-5 flex flex-col gap-1 justify-center items-start cursor-pointer">
                                 <span className="h-0.5 w-full bg-white rounded-full"></span>
@@ -108,7 +108,7 @@ export default function Education() {
                         </h1>
                     </header>
 
-                    <main className="flex-1 overflow-auto max-md:pt-40 pt-32 px-6 md:px-12">
+                    <main className="flex-1 overflow-auto max-lg:pt-40 pt-32 px-6 md:px-12">
                         <header className="mb-12 border-b border-neutral-800 pb-12">
                             <span className="block text-xs w-fit px-3 py-1 font-plusJktSans font-bold border border-neutral-600 rounded-2xl mb-4">Edukasi</span>
                             <h1 className="text-6xl/18 md:max-w-lg font-plusJktSans font-bold mb-4">Kenali karhutla dari akarnya</h1>
@@ -133,7 +133,7 @@ export default function Education() {
 function DesktopSideBar({sideBarItems, activatedMenu, goTo}) {
     return(
         <>
-            <aside className="sticky shrink-0 max-md:hidden flex items-center top-4 h-screen bg-background overflow-hidden w-80 pl-10 pr-2 font-inter text-sm">
+            <aside className="sticky shrink-0 max-lg:hidden flex items-center top-4 h-screen bg-background overflow-hidden w-80 pl-10 pr-2 font-inter text-sm">
                 <div className="px-6 space-y-2 w-full">
                     <h1 className="font-plusJktSans font-bold text-xs text-neutral-500 tracking-wider">DI HALAMAN INI</h1>
                     {sideBarItems.map((item, index) => {
@@ -188,7 +188,7 @@ function MobileSideBar({isMobileOpen, sideBarItems, activatedMenu, goTo, setIsMo
 
     return(
         <>
-            <div ref={containerRef} className="fixed inset-0 z-20 hidden opacity-0 md:hidden">
+            <div ref={containerRef} className="fixed inset-0 z-20 hidden opacity-0 lg:hidden">
                 <div onClick={() => {setIsMobileOpen(false)}} className="absolute inset-0 bg-black/60 backdrop-blur-sm md:hidd'"/>
                 <div ref={menuRef} className="relative top-32 w-full bg-background border-b border-neutral-800 p-6 flex flex-col gap-3 font-inter text-neutral-200">
                     {sideBarItems.map((item, index) => {
