@@ -1,5 +1,6 @@
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
+import AirVisual from "./sub-pages/AirVisual";
 import Hotspot from "./sub-pages/Hotspot";
 
 export default function Monitoring() {
@@ -13,7 +14,8 @@ export default function Monitoring() {
                         <h1 className="text-6xl/18 font-plusJktSans font-bold mb-4">Pantau udara di sekitarmu</h1>
                         <p className="text-lg text-neutral-400 font-inter max-w-2xl">Lihat kualitas udara tiap provinsi, wilayah yang pernah tertutup asap, dan di mana titik api terdeteksi.</p>
                     </header>
-                    <Hotspot/>
+                    <section className="pb-20"><Hotspot/></section>    
+                    <section className="pb-20"><AirVisual/></section>    
                 </main>
             </div>
             <Footer/>

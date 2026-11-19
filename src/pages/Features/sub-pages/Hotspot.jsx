@@ -7,6 +7,8 @@ import { useRef } from "react";
 export default function Hotspot() {
     const siPongiContainer = useRef(null);
     const [isSiPongiFull, setIsSiPongiFull] = useState(false);
+    const [isSiPongiIntractive, setIsSiPongiIntractive] = useState(false);
+
 
     const toggleSiPongiFull = () => {
         if(!document.fullscreenElement) {
@@ -24,22 +26,30 @@ export default function Hotspot() {
                 <span className="font-inter block font-semibold text-xs text-red-300 tracking-widest mb-2">01 · TITIK API</span>
                 <h1 className="font-plusJktSans font-bold text-4xl mb-3">Titik api terkini</h1>
                 <p className="font-inter text-lg/8 font-light text-neutral-400 max-w-3xl">Titik api di sini adalah titik panas yang dideteksi satelit. Itu tanda kemungkinan ada api, belum tentu kebakaran yang sudah dipastikan di lapangan.</p>
-                <div ref={siPongiContainer} className={`bg-neutral-800/60 border border-neutral-700 ${isSiPongiFull ? 'rounded-none w-screen h-screen flex flex-col justify-center items-center bg-neutral-950 p-0 m-0 border-none' : 'rounded-lg'} overflow-clip my-6 relative`}>
-                        
-                        <button title="fullscreen" onClick={toggleSiPongiFull} className="absolute z-10 right-2 top-2 p-1.5 text-xs font-medium text-white bg-neutral-700 hover:bg-neutral-600 rounded-md transition-colors flex items-center gap-1.5 cursor-pointer">
-                            {isSiPongiFull ? <Minimize/> : <Maximize/>}
-                        </button>
 
+                <div ref={siPongiContainer} onMouseLeave={() => setIsSiPongiIntractive(false)} className={`bg-neutral-800/60 border border-neutral-700 ${isSiPongiFull ? 'rounded-none w-screen h-screen flex flex-col justify-center items-center bg-neutral-950 p-0 m-0 border-none' : 'rounded-lg'} overflow-clip my-6 relative`}>
+                    <button title="fullscreen" onClick={toggleSiPongiFull} className="absolute z-10 right-2 top-2 p-1.5 text-xs font-medium text-white bg-neutral-700 hover:bg-neutral-600 rounded-md transition-colors flex items-center gap-1.5 cursor-pointer">
+                        {isSiPongiFull ? <Minimize/> : <Maximize/>}
+                    </button>
+                    {!isSiPongiIntractive && (
+                        <div onClick={() => setIsSiPongiIntractive(true)} className="absolute inset-0 z-10 bg-black/40 backdrop-blur-[2px] flex items-center justify-center cursor-pointer transition-opacity">
+                        <span className="bg-neutral-900/90 text-white text-xs px-3 py-2 rounded-lg border border-neutral-700 shadow-md">
+                            Klik untuk mengaktifkan peta
+                        </span>
+                        </div>
+                    )}
                     <SipongiMap isFull={isSiPongiFull}/>
                 </div>
+
             </div>
         </>
     )
 }
 
 function SipongiMap({ isFull }) {
+
   return (
-    <div className={`relative w-full overflow-hidden ${isFull ? 'h-full' : 'aspect-video'}`}>
+    <div className={`relative w-full overflow-hidden ${isFull ? 'h-full' : 'h-[calc(100vh-150px)] min-h-[400px]'}`}> 
       <iframe
         src="https://sipongi.gakkum.kehutanan.go.id/peta"
         className="absolute inset-0 size-full border-0"
