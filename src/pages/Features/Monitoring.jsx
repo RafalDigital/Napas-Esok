@@ -1,5 +1,6 @@
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
+import Hotspot from "./sub-pages/Hotspot";
 
 export default function Monitoring() {
     return(
@@ -7,9 +8,12 @@ export default function Monitoring() {
             <Navbar/>
             <div className="min-h-[100dvh] bg-background flex items-start">
                 <main className="flex-1 overflow-auto max-lg:pt-40 pt-32 px-6 md:px-12">
-                    <div className="bg-neutral-800/60 border border-neutral-700 rounded-lg overflow-clip mb-4">
-                        <SipongiMap/>
-                    </div>
+                    <header className="mb-12 border-b border-neutral-800 pb-12">
+                        <span className="block text-xs w-fit px-3 py-1 font-plusJktSans font-bold border border-neutral-600 rounded-2xl mb-4">Pantau</span>
+                        <h1 className="text-6xl/18 font-plusJktSans font-bold mb-4">Pantau udara di sekitarmu</h1>
+                        <p className="text-lg text-neutral-400 font-inter max-w-2xl">Lihat kualitas udara tiap provinsi, wilayah yang pernah tertutup asap, dan di mana titik api terdeteksi.</p>
+                    </header>
+                    <Hotspot/>
                 </main>
             </div>
             <Footer/>
@@ -17,16 +21,3 @@ export default function Monitoring() {
     )
 }
 
-function SipongiMap() {
-  return (
-    <div className="relative w-full aspect-video overflow-hidden">
-      <iframe
-        src="https://sipongi.gakkum.kehutanan.go.id/peta"
-        className="absolute inset-0 size-full border-0"
-        allowFullScreen
-        loading="lazy"
-        referrerPolicy="no-referrer-when-downgrade"
-      />
-    </div>
-  );
-};
