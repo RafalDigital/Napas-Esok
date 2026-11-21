@@ -12,9 +12,11 @@ export default function AirVisual() {
 
     const toggleAirVisualFull = () => {
         if(!document.fullscreenElement) {
-            AirVisualContainer.current?.requestFullscreen()
+            AirVisualContainer.current?.requestFullscreen();
+            window.screen?.orientation?.lock?.("landscape");
             setIsAirVisualFull(true)
         } else {
+            window.screen?.orientation?.unlock?.();
             document.exitFullscreen();
             setIsAirVisualFull(false)
         }
@@ -53,7 +55,7 @@ function AirVisualMap({ isFull }) {
       <iframe
         src="https://www.iqair.com/id/embeddable-map"
         data-city="indonesia"
-        className="absolute inset-0 size-full border-0 w-[133.33%] h-[133.33%] scale-75 md:w-full md:h-full md:scale-100"
+        className="absolute inset-0 size-full border-0"
         allowFullScreen
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"
