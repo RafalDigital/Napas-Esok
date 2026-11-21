@@ -53,7 +53,7 @@ function AirVisualMap({ isFull }) {
       <iframe
         src="https://www.iqair.com/id/embeddable-map"
         data-city="indonesia"
-        className="absolute inset-0 size-full border-0"
+        className="absolute inset-0 size-full border-0 w-[133.33%] h-[133.33%] scale-75 md:w-full md:h-full md:scale-100"
         allowFullScreen
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"
